@@ -1,16 +1,47 @@
-## Hi there 👋
+# Hola, soy Ronny 👋
 
-<!--
-**ronnypro1/ronnypro1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Backend developer autodidacta en Guayaquil, Ecuador. Programo, despliego y mantengo bots de Telegram en producción: desde el código hasta el servidor.
 
-Here are some ideas to get you started:
+## Stack
+- **Python:** Pyrogram, Kurigram, Telethon, PyTgCalls
+- **Node.js:** Telegraf
+- **Bases de datos:** MongoDB, PostgreSQL
+- **Infraestructura:** VPS Linux, despliegue y monitoreo de bots
+- **Frontend:** HTML, CSS, JavaScript
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Darkangel Bots
+Red de bots de Telegram con moderación, música, juegos e interacción social. Mantengo yo solo los bots, los servidores y el sitio web.
+
+🌐 [darkangelbots.dev](https://darkangelbots.dev/) · 🤖 [Estado de los bots](https://darkangelbots.dev/estado.html) · 🏆 [Créditos](https://darkangelbots.dev/creditos/creditos.html)
+
+| Bot | Qué hace |
+|---|---|
+| [Akami](https://t.me/AkamiXbot) | Administración y moderación de grupos (roles, antiflood) |
+| [Penny](https://t.me/PennyPirate_bot) | Administración de grupos con temática pirata |
+| [Akami Music](https://t.me/AkamiXmusicbot) | Transmisión de música y video en grupos y canales |
+| [Bocchi Music](https://t.me/BocchiXmusicbot) | Bot de música |
+| [Sayomi Whisper](https://t.me/SayomiXwhisperbot) | Mensajes susurrados y privacidad |
+| [Diosa Moon](https://t.me/Diosamoonbot) | Cumpleaños, bienvenidas, juegos, clima y calendario lunar |
+| [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Confesiones anónimas y registro de cumpleaños |
+| [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Juego de rol: adopciones, matrimonios, economía y rituales |
+| [Vesta](https://t.me/Orusvesta_bot) | Horóscopo diario y carta natal |
+| [Puchu](https://t.me/Puchuflusbot) | Juegos y economía. Mantenimiento y desarrollo continuo |
+
+> En varios bots la idea y el diseño son de otras personas del equipo; la programación y el servidor son míos. Los puedes probar directamente desde los enlaces.
+
+## Trabajo destacado en Puchu
+- Sistema de apuestas del Mundial 2026, con corrección de condiciones de carrera
+- Catálogo centralizado de la tienda para evitar errores de sincronización
+- Comando de estado del servidor con métricas del VPS (CPU, RAM, disco)
+
+## Otros proyectos
+- **Arcade retro:** arcade en el navegador con emuladores (EmulatorJS)
+
+> Mi código de producción está en repos privados. Con gusto doy acceso de lectura para revisión si lo necesitas.
+
+## Aprendiendo ahora
+Certificación de JavaScript en freeCodeCamp.
+
+## Contacto
+📧 [contacto@darkangelbots.dev](mailto:contacto@darkangelbots.dev)
+💬 Telegram: [@darkangeldev](https://t.me/darkangeldev)
