@@ -6,7 +6,7 @@
 
 <img src="https://skillicons.dev/icons?i=python,nodejs,mongodb,postgres,linux,js,html,css" />
 
-<br>
+<br><br>
 
 </div>
 
