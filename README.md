@@ -25,9 +25,9 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 | [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Confesiones anónimas y registro de cumpleaños |
 | [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Juego de rol: adopciones, matrimonios, economía y rituales |
 | [Vesta](https://t.me/Orusvesta_bot) | Horóscopo diario y carta natal |
-| [Puchu](https://t.me/Puchuflusbot) | Juegos y economía. Mantenimiento y desarrollo continuo |
+| [Puchu](https://t.me/Puchuflusbot) | Juegos y economía. Código recibido de otra persona; lo mantengo y desarrollo (corrección de errores y funciones nuevas) |
 
-> En varios bots la idea y el diseño son de otras personas del equipo; la programación y el servidor son míos. Los puedes probar directamente desde los enlaces.
+> En varios bots la idea y el diseño son de otras personas del equipo; la programación y el servidor son míos. La excepción es Puchu, que recibí ya creado y del que me encargo del mantenimiento y las mejoras. Los puedes probar directamente desde los enlaces.
 
 ## Trabajo destacado en Puchu
 - Sistema de apuestas del Mundial 2026, con corrección de condiciones de carrera
