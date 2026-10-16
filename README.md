@@ -22,10 +22,6 @@ Backend developer autodidacta en Guayaquil, Ecuador. Programo, despliego y mante
 ## Darkangel Bots
 Red de bots de Telegram con moderación, música, juegos e interacción social. Mantengo yo solo los bots, los servidores y el sitio web.
 
-<div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=100&section=footer" />
-</div>
-
 | Bot | Qué hace |
 |---|---|
 | [Akami](https://t.me/AkamiXbot) | Administración y moderación de grupos (roles, antiflood) |
@@ -55,6 +51,9 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 Certificación de JavaScript en freeCodeCamp.
 
 ## Contacto
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=100&section=footer" />
+</div>
 <a href="https://darkangelbots.dev/"><img src="https://img.shields.io/badge/Web-darkangelbots.dev-6c5ce7?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
 <a href="https://t.me/darkangeldev"><img src="https://img.shields.io/badge/Telegram-@darkangeldev-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" /></a>
 <a href="mailto:contacto@darkangelbots.dev"><img src="https://img.shields.io/badge/Email-contacto@darkangelbots.dev-ea4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
