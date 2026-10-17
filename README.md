@@ -31,7 +31,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 | [Bocchi Music](https://t.me/BocchiXmusicbot) | Música y videostream | Pyrogram/Kurigram con PyTgCalls, yt-dlp y ffmpeg, hasta 5 cuentas asistentes y varios idiomas; optimización de CPU en un VPS de 1 núcleo |
 | [Sayomi Whisper](https://t.me/SayomiXwhisperbot) | Mensajes susurrados y privacidad | Arquitectura por plugins (modo inline, privacidad, estadísticas), español e inglés, y reporte de estado a mi página |
 | [Diosa Moon](https://t.me/Diosamoonbot) | Comunidad con juegos, progreso y cumpleaños | Sistema de linajes con quiz, puntos y rankings; cumpleaños por zona horaria; juegos con temporizadores asíncronos; multilenguaje y reanudación de tareas tras reinicios |
-| [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Confesiones anónimas y registro de cumpleaños | (completar) |
+| [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Confesiones anónimas de cara al público, con moderación | Flujo de aprobación en un grupo de admins, publicación de texto y multimedia en un canal con soporte de citas, bloqueo de usuarios, donaciones con Telegram Stars y respaldos diarios |
 | [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Juego de rol con economía y rituales | Economía con monedas, familiares y recompensas por anuncios; migración de MongoDB Atlas a un servidor propio |
 | [Vesta](https://t.me/Orusvesta_bot) | Horóscopo diario y carta natal | (completar) |
 | [Puchu](https://t.me/Puchuflusbot) | Juegos y economía (código recibido; lo mantengo y desarrollo) | Apuestas del Mundial 2026, tienda centralizada y comando de estado con métricas del servidor |
@@ -69,7 +69,9 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Datos inconsistentes en MongoDB (Mephisto Ryu):** detecté que algunos usuarios se guardaban con otro tipo de identificador y quedaban invisibles para el resto del bot
 - **Límite de Telegram en botones (Mephisto Ryu):** un diccionario completo se serializaba dentro de los datos del botón y superaba el límite de 64 bytes
 - **Centralización de la tienda (Puchu):** un único catálogo para eliminar errores de sincronización entre menús
-
+- **Citas que se perdían al publicar (Moon Confesiones):** al copiar un mensaje que respondía a otro se perdía la cita; reconstruí el contenido con un bloque de cita respetando los límites de caracteres de Telegram, con un respaldo si no cabía
+- **Error de bucle de eventos al arrancar (Moon Confesiones):** el cliente fija su event loop al crearse y un segundo loop rompía el inicio; reutilicé el mismo loop en vez de crear uno nuevo
+  
 ## Qué incluye Diosa Moon
 - **Linajes:** cuatro bandos con un quiz por encuestas, puntos según la actividad, rankings y habilidades de grupo con enfriamiento de 24 horas
 - **Juegos:** Stop con rondas y temporizadores, ahorcado, preguntas programadas, lotería y un juego de estrellas con canje de tickets
