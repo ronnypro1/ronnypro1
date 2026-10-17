@@ -30,7 +30,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 | [Akami Music](https://t.me/AkamiXmusicbot) | Música y video en grupos y canales | (completar) |
 | [Bocchi Music](https://t.me/BocchiXmusicbot) | Música y videostream | Pyrogram/Kurigram con PyTgCalls, yt-dlp y ffmpeg, hasta 5 cuentas asistentes y varios idiomas; optimización de CPU en un VPS de 1 núcleo |
 | [Sayomi Whisper](https://t.me/SayomiXwhisperbot) | Mensajes susurrados y privacidad | Arquitectura por plugins (modo inline, privacidad, estadísticas), español e inglés, y reporte de estado a mi página |
-| [Diosa Moon](https://t.me/Diosamoonbot) | Cumpleaños, bienvenidas, juegos, clima y calendario lunar | (completar) |
+| [Diosa Moon](https://t.me/Diosamoonbot) | Comunidad con juegos, progreso y cumpleaños | Sistema de linajes con quiz, puntos y rankings; cumpleaños por zona horaria; juegos con temporizadores asíncronos; multilenguaje y reanudación de tareas tras reinicios |
 | [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Confesiones anónimas y registro de cumpleaños | (completar) |
 | [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Juego de rol con economía y rituales | Economía con monedas, familiares y recompensas por anuncios; migración de MongoDB Atlas a un servidor propio |
 | [Vesta](https://t.me/Orusvesta_bot) | Horóscopo diario y carta natal | (completar) |
@@ -70,6 +70,15 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Límite de Telegram en botones (Mephisto Ryu):** un diccionario completo se serializaba dentro de los datos del botón y superaba el límite de 64 bytes
 - **Centralización de la tienda (Puchu):** un único catálogo para eliminar errores de sincronización entre menús
 
+## Qué incluye Diosa Moon
+- **Linajes:** cuatro bandos con un quiz por encuestas, puntos según la actividad, rankings y habilidades de grupo con enfriamiento de 24 horas
+- **Juegos:** Stop con rondas y temporizadores, ahorcado, preguntas programadas, lotería y un juego de estrellas con canje de tickets
+- **Cumpleaños** con zona horaria por usuario, avisos al grupo y en privado sin duplicados
+- **Comunidad:** bienvenidas con aprobación de solicitudes, AFK, frases con panel por grupo y calendario lunar
+- **Operación:** respaldos automáticos y latido periódico para detectar reinicios en bucle
+- **Quiz que sobrevive a los reinicios (Diosa Moon):** guardo el progreso en MongoDB con fecha de expiración, así nadie pierde el avance cuando el bot se reinicia
+- **Puntos "farmeables" (Diosa Moon):** puse separación mínima entre mensajes, bloqueo temporal ante ráfagas y un tamaño mínimo de grupo para que no se puedan acumular puntos con spam
+  
 ## Otros proyectos
 - **Arcade retro:** arcade en el navegador con emuladores (EmulatorJS)
 
