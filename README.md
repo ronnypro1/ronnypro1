@@ -43,7 +43,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Administración:** promoción y degradación de admins por niveles, títulos y etiquetas, anclado de mensajes, enlaces de invitación y gestión de foto, título y descripción del grupo
 - **Protección:** antiflood con ventana de tiempo y cinco modos de sanción, antiraid, anti canal vinculado, lista negra, federaciones de grupos, limpieza de cuentas eliminadas y modo nocturno que cierra y abre el grupo según horario y zona horaria
 - **Roles por grupo (diseño propio):** Rey, Reina, Torres, Alfiles, Caballos y Peones, con comandos y límites por rol, sincronizados con las etiquetas nativas de Telegram
-- **Comunidad:** bienvenidas y despedidas con multimedia, mute de bienvenida, solicitudes de ingreso, AFK y frases en sticker
+- **Comunidad:** bienvenidas y despedidas con multimedia, mute de bienvenida, solicitudes de ingreso, AFK y frases en sticker (con packs por grupo, valoraciones y caché propios, sobre un servicio de renderizado de [QuotLy](https://github.com/LyoSU/quote-bot), licencia MIT)
 - **Chatbot con IA:** conversación con memoria por usuario, respaldo automático entre cinco proveedores de modelos con rotación de claves, respuestas en nota de voz y transcripción de notas de voz recibidas, con panel de estado
 - **Utilidades:** zip y unzip con cifrado AES-256, texto a mano alzada en imagen y borrado masivo de mensajes
 - **Paneles interactivos con botones** para configurar casi todo sin escribir comandos
