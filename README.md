@@ -32,7 +32,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 | [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Confesiones anónimas de cara al público, con moderación | Flujo de aprobación en un grupo de admins, publicación de texto y multimedia en un canal con soporte de citas, bloqueo de usuarios, donaciones con Telegram Stars y respaldos diarios |
 | [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Juego de rol con economía y rituales | Economía con monedas, familiares y recompensas por anuncios; migración de MongoDB Atlas a un servidor propio |
 | [Vesta](https://t.me/Orusvesta_bot) | Horóscopo diario y carta natal | Miniapp de Telegram en 4 idiomas con horóscopo diario, semanal y mensual, compatibilidad, perfil astral y carta natal con cálculo astronómico propio; astrólogo con IA con cuotas diarias validadas en el servidor; confesiones anónimas y comandos de signos en el bot |
-| [Puchu](https://t.me/Puchuflusbot) | Juegos y economía (código recibido; lo mantengo y desarrollo) | Apuestas del Mundial 2026, tienda centralizada y comando de estado con métricas del servidor |
+| [Puchu](https://t.me/Puchuflusbot) | Juegos y economía (código recibido; lo mantengo y desarrollo) | Juegos multijugador por turnos en grupos, economía con tienda, regalos e insignias, rankings con medallas, apuestas del Mundial 2026 con cuadro de eliminatorias, sistema de temáticas, difusiones masivas, respaldos y comando de estado con métricas del servidor (ver abajo) |
 
 > En varios bots la idea y el diseño son de otras personas del equipo; la programación y el servidor son míos. La excepción es Puchu, que recibí ya creado y del que me encargo del mantenimiento y las mejoras. Los puedes probar directamente desde los enlaces.
 
@@ -76,8 +76,42 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Cadena de proveedores de IA:** Groq → Gemini → OpenRouter, con rotación de claves, enfriamiento ante límites de uso y salto rápido al siguiente proveedor
 - **Operación:** respaldos automáticos cada 30 minutos con copia diaria, heartbeat hacia mi página y evento de arranque para detectar bucles de reinicio
 
+## Qué incluye Puchu
+- **Juegos multijugador en grupos:** Bandido (detectives contra bandidos, con habitaciones, votación y objetos), Veloz, Tornado, Memoria, Ruleta, Dado, Bomba, Globo, Lobo y Tragapuchus (tragamonedas con bote acumulado). Cada partida tiene sala de espera, mínimo de jugadores, multiplicadores para admins y bonus en partidas especiales
+- **Lista de espera:** `/puchunext` avisa por privado cuando arranca una nueva partida en el grupo
+- **Economía:** puchupuntos, tienda con catálogo único, regalos entre usuarios, transferencias con teclado numérico y comisión dinámica, títulos personalizados e insignias comprables con tope por usuario
+- **Rankings y medallas:** top global, mensual y por juego, con medallas trimestrales repartidas automáticamente
+- **Puchutime:** evento que reparte puntos a quienes escriben primero, escalonado entre los grupos afiliados
+- **Apuestas del Mundial 2026:** multiplicadores de x1 a x1000, pozo compartido entre los acertantes, reembolso si nadie acierta, retiro en partidos suspendidos, calendario con horas por país, `/topmundial` y cuadro de eliminatorias generado como imagen. Ya terminado: se activa y desactiva con una sola bandera
+- **Temáticas ("masivas"):** cada usuario elige un personaje por grupo que reemplaza su nombre en los juegos, con cambios limitados y de pago
+- **Comandos de comunidad:** `/puchushipp`, `/puchuconsejo`, `/puchununca`, verdad o reto en varios idiomas, preguntas de personalidad y GIFs de acciones (`!kiss`, `!hug`…) filtrados por género
+- **Administración:** difusión a grupos y usuarios con barra de progreso, lista negra de chats, reinicio de partidas colgadas y actualización con `git pull` más reinicio desde el propio chat
+- **Multilenguaje** por grupo y por usuario
+
+## Arquitectura de Puchu
+- **Node.js con Telegraf y MongoDB (Mongoose)**, con estado de las partidas en archivos temporales que permiten retomar los temporizadores tras un reinicio
+- **Manejo centralizado de errores:** los errores inofensivos de Telegram se registran de forma compacta y el resto se reporta con su traza a un grupo de logs
+- **Caché de `getChatMember`** con expiración y limpieza periódica para no saturar la API
+- **Respaldos:** `mongodump` rotativo cada 3 horas y envío diario de la copia más reciente a los creadores, dividida en partes si es grande
+- **Monitoreo:** heartbeat hacia mi página y comando de estado con latencia, CPU, RAM, disco, memoria del proceso y estado de MongoDB
+
 ## Problemas técnicos que resolví
 - **Condiciones de carrera en apuestas (Puchu):** bloqueos por usuario para evitar apuestas duplicadas y corrección de la lógica de llaves del Mundial
+- **Apuestas que podían cobrar de más o de menos (Puchu):** el selector arrancaba siempre en x1 aunque el usuario ya tuviera una apuesta, la validación de saldo comparaba contra el total en vez de la diferencia al modificar y cambiar de resultado hacía perder la apuesta anterior sin reembolso; ahora arranca en la cantidad real, valida el costo real y exige retirar antes de apostar a otro resultado
+- **Cuadro de eliminatorias que no avanzaba (Puchu):** faltaba el mapeo de octavos a cuartos, semifinales y final, y de los perdedores al tercer puesto; los ganadores no pasaban de ronda y el cuadro se quedaba en "?"
+- **API de resultados poco confiable (Puchu):** protegí el estado y los goleadores cargados a mano, evité que el marcador retroceda, descarté estados imposibles (segundo tiempo antes de tiempo) y añadí un respaldo con una segunda fuente de datos
+- **Horarios de partidos en zonas distintas (Puchu):** cada estadio tiene su propio huso horario y el calendario muestra la hora en varios países
+- **Premios sin ganadores (Puchu):** si nadie acierta se reembolsa a todos y el partido queda marcado para que el historial lo muestre bien
+- **Jugadores que "resucitaban" en la ruleta (Puchu):** un `await` antes de guardar permitía que un callback tardío pisara el estado de eliminado; ahora el estado se calcula y se guarda de forma síncrona
+- **Teclados vacíos en Tornado (Puchu):** celdas sin texto hacían fallar a Telegram con "Can't find field text"; ahora se omiten y no se envía un teclado vacío
+- **Partidas trabadas por errores (Puchu):** Tragapuchus solo liberaba el chat en el flujo feliz; ahora lo hace también ante cualquier error, y hay un comando para liberar partidas colgadas y los bloqueos de sus jugadores
+- **Migración de insignias sin duplicar (Puchu):** al separar las insignias comprables en identificadores nuevos, escribí una migración idempotente que acredita lo que ya tenían respetando el tope por usuario
+- **Modo "cambiar bienvenida" que se quedaba bloqueado (Puchu):** añadí expiración de 2 minutos para que un admin que abandona el panel no deje a los demás sin poder editar
+- **Puchutime sin flood (Puchu):** lo reescribí con un candado de ejecución, un único aviso por grupo sin jugadores suficientes y el intervalo repartido según la cantidad de grupos
+- **Migración de grupo a supergrupo (Puchu):** al migrar, la configuración y los registros de jugadores pasan al nuevo identificador
+- **Límites de Telegram (Puchu):** envíos con reintento según `retry_after` y ediciones espaciadas en los mensajes en vivo para no recibir 429
+- **Carga del VPS (Puchu):** bajé el respaldo rotativo de cada 30 minutos a cada 3 horas y lo guardé fuera de la carpeta que vigila nodemon
+- **Arranque que no confirmaba conexión (Puchu):** `bot.launch()` de Telegraf no se resuelve hasta que el bot se detiene; confirmo la conexión con `getMe()` y recién ahí inicio el heartbeat
 - **Centralización de la tienda (Puchu):** un único catálogo para eliminar errores de sincronización entre menús
 - **Actualizaciones repetidas tras un reinicio (Akami):** el bot reprocesaba mensajes viejos; lo resolví con un handler de prioridad máxima y deduplicación con estructuras de memoria
 - **Bans permanentes por error (Akami):** en el antiflood con sanción temporal, si el mensaje ya estaba borrado el bot no leía la duración y baneaba para siempre; ahora usa el valor guardado y tiene un respaldo seguro
