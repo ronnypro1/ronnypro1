@@ -160,7 +160,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Ranking semanal estable (Vesta):** `/topsignos` se genera con una semilla derivada del ámbito y la semana, y se guarda con inserción condicional para evitar carreras
 
 ## Otros proyectos
-| [Vorath](https://t.me/Vorath_bot) | Biblioteca de juegos retro como miniapp de Telegram | Bot en Pyrogram (Kurigram) que abre una miniapp con la biblioteca de juegos en el navegador, idioma por usuario y por grupo, modo ligero para dispositivos de gama baja, respaldos automáticos y reinicio con actualización desde el propio chat |
+| [Vorath](https://t.me/Vorath_bot) | Biblioteca de juegos retro dentro de Telegram | Bot en Pyrogram (Kurigram) cuyo comando `/arcade` abre, con un botón, una miniapp de Telegram con la biblioteca de juegos; idioma por usuario y por grupo, modo ligero para dispositivos de gama baja, respaldos automáticos y reinicio con actualización desde el propio chat |
 
 > Mi código de producción está en repos privados. Si eres reclutador o estás evaluando mi trabajo, escríbeme y te doy acceso de lectura.
 
