@@ -160,7 +160,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 ## Otros proyectos
 - **Arcade retro:** arcade en el navegador con emuladores (EmulatorJS)
 
-> Mi código de producción está en repos privados. Con gusto doy acceso de lectura para revisión si lo necesitas.
+> Mi código de producción está en repos privados. Si eres reclutador o estás evaluando mi trabajo, escríbeme y te doy acceso de lectura.
 
 ## Aprendiendo ahora
 Certificación de JavaScript en freeCodeCamp.
