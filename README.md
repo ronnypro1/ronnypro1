@@ -26,8 +26,6 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 | Bot | Qué hace | Lo que hice |
 |---|---|---|
 | [Akami](https://t.me/AkamiXbot) | Administración y moderación de grupos | Parto de [FallenRobot](https://github.com/AnonymousX1025/FallenRobot) (licencia MIT) y reescribí gran parte a arquitectura asíncrona. Moderación completa, roles por grupo, antiflood, federaciones, modo nocturno, chatbot con IA y más (ver abajo) |
-| [Penny](https://t.me/PennyPirate_bot) | Administración de grupos con temática pirata | (completar) |
-| [Akami Music](https://t.me/AkamiXmusicbot) | Música y video en grupos y canales | (completar) |
 | [Bocchi Music](https://t.me/BocchiXmusicbot) | Música y video en llamadas de voz de grupos | Transmisión de audio y video con hasta 5 cuentas asistentes y varios idiomas; límites de recursos en un VPS compartido (un solo núcleo, descargas simultáneas acotadas y espera por usuario), limpieza automática de archivos y respaldos |
 | [Sayomi Whisper](https://t.me/SayomiXwhisperbot) | Mensajes susurrados y privacidad | Arquitectura por plugins (modo inline, privacidad, estadísticas), español e inglés, y reporte de estado a mi página |
 | [Diosa Moon](https://t.me/Diosamoonbot) | Comunidad con juegos, progreso y cumpleaños | Sistema de linajes con quiz, puntos y rankings; cumpleaños por zona horaria; juegos con temporizadores asíncronos; multilenguaje y reanudación de tareas tras reinicios |
