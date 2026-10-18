@@ -160,7 +160,7 @@ A network of Telegram bots covering moderation, music, games and social interact
 - **Stable weekly ranking (Vesta):** `/topsignos` is generated with a seed derived from the scope and the week, and saved with a conditional insert to avoid races
 
 ## Other projects
-- **Retro arcade:** in-browser arcade with emulators (EmulatorJS)
+| [Vorath](https://t.me/Vorath_bot) | Retro game library as a Telegram mini app | Pyrogram (Kurigram) bot that opens an in-browser game library mini app, per-user and per-group language, a lightweight mode for low-end devices, automatic backups and restart-with-update from the chat itself |
 
 > My production code lives in private repos. If you're a recruiter or evaluating my work, message me and I'll give you read access.
 
