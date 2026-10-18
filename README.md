@@ -26,7 +26,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 | Bot | Qué hace | Lo que hice |
 |---|---|---|
 | [Akami](https://t.me/AkamiXbot) | Administración y moderación de grupos | Parto de [FallenRobot](https://github.com/AnonymousX1025/FallenRobot) (licencia MIT) y reescribí gran parte a arquitectura asíncrona. Moderación completa, roles por grupo, antiflood, federaciones, modo nocturno, chatbot con IA y más (ver abajo) |
-| [Bocchi Music](https://t.me/BocchiXmusicbot) | Música y video en llamadas de voz de grupos | Transmisión de audio y video con hasta 5 cuentas asistentes y varios idiomas; límites de recursos en un VPS compartido (un solo núcleo, descargas simultáneas acotadas y espera por usuario), limpieza automática de archivos y respaldos |
+| [Bocchi Music](https://t.me/BocchiXmusicbot) | Música y video en llamadas de voz de grupos | Parto de [AnonXMusic](https://github.com/AnonymousX1025/AnonXMusic) (licencia MIT) y reescribí gran parte: transmisión de audio y video con hasta 5 cuentas asistentes y varios idiomas, límites de recursos para un VPS compartido, ciclo de vida más robusto, respaldos y monitoreo (ver abajo) |
 | [Sayomi Whisper](https://t.me/SayomiXwhisperbot) | Mensajes susurrados y privacidad | Arquitectura por plugins (modo inline, privacidad, estadísticas), español e inglés, y reporte de estado a mi página |
 | [Diosa Moon](https://t.me/Diosamoonbot) | Comunidad con juegos, progreso y cumpleaños | Sistema de linajes con quiz, puntos y rankings; cumpleaños por zona horaria; juegos con temporizadores asíncronos; multilenguaje y reanudación de tareas tras reinicios |
 | [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Confesiones anónimas de cara al público, con moderación | Flujo de aprobación en un grupo de admins, publicación de texto y multimedia en un canal con soporte de citas, bloqueo de usuarios, donaciones con Telegram Stars y respaldos diarios |
@@ -53,6 +53,21 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Cierre ordenado** ante señales del sistema y **respaldos automáticos** de Postgres y Mongo con copia diaria en la nube
 
 > Akami parte de [FallenRobot](https://github.com/AnonymousX1025/FallenRobot) (AnonymousX1025, licencia MIT). Los roles por grupo, el antiflood, el chatbot con IA, la reescritura de federaciones y la arquitectura asíncrona son trabajo propio.
+
+## Qué incluye Bocchi Music
+- **Transmisión en llamadas de voz:** audio y video en los chats de voz de grupos, con hasta 5 cuentas asistentes (userbots) y varios idiomas
+- **Recursos acotados en un VPS compartido:** el proceso se fija a un núcleo (configurable por variable de entorno), con descargas simultáneas limitadas, espera por usuario y topes de duración y tamaño
+- **Limpieza automática:** las carpetas temporales (descargas, caché, archivos de reproducción) se vacían en cada arranque
+- **Operación:** respaldo diario programado, heartbeat hacia mi página y evento de arranque para detectar bucles de reinicio
+
+## Arquitectura de Bocchi Music
+- **Pyrogram (Kurigram) + PyTgCalls** con bot y asistentes en el mismo proceso y un único event loop compartido
+- **Afinidad de CPU configurable:** `BOCCHI_CPUS` define los núcleos del proceso y de sus hijos (ffmpeg incluido); por defecto solo el núcleo 0
+- **Cierre ordenado:** el apagado vive en un `finally`, así que ante un error o una salida forzada se cierran el scheduler, el bot, el userbot y las sesiones HTTP, y un fallo en un paso no impide los siguientes
+- **Sesiones HTTP compartidas** (Deezer y miniaturas) que se crean una vez y se cierran al apagar
+- **Planificador asíncrono (APScheduler)** con zona horaria de Guayaquil para el respaldo diario y el heartbeat cada 10 minutos
+
+> Bocchi Music parte de [AnonXMusic](https://github.com/AnonymousX1025/AnonXMusic) (AnonymousX1025, licencia MIT). La gestión de recursos, el ciclo de vida y cierre, los respaldos, el monitoreo y la reescritura de gran parte del código son trabajo propio.
 
 ## Qué incluye Diosa Moon
 - **Linajes:** cuatro bandos con un quiz por encuestas, puntos según la actividad, rankings y habilidades de grupo con enfriamiento de 24 horas
@@ -126,6 +141,8 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Citas que se perdían al publicar (Moon Confesiones):** al copiar un mensaje que respondía a otro se perdía la cita; reconstruí el contenido con un bloque de cita respetando los límites de caracteres de Telegram, con un respaldo si no cabía
 - **Error de bucle de eventos al arrancar (Moon Confesiones):** el cliente fija su event loop al crearse y un segundo loop rompía el inicio; reutilicé el mismo loop en vez de crear uno nuevo
 - **Límites de recursos en un VPS compartido (Bocchi):** fijé el proceso a un núcleo, limité las descargas simultáneas, añadí espera por usuario, topes de duración y tamaño, y limpieza automática de archivos temporales
+- **Cierre que dejaba cosas abiertas (Bocchi):** si algo fallaba o llegaba un `SystemExit`, no se cerraban el bot, el userbot, las sesiones HTTP ni el scheduler; moví el apagado a un `finally` con pasos independientes
+- **Núcleo fijo que no se adaptaba (Bocchi):** el límite de CPU estaba escrito en el código; ahora se configura con `BOCCHI_CPUS`, con el núcleo 0 como valor por defecto
 - **Quiz que sobrevive a los reinicios (Diosa Moon):** guardo el progreso en MongoDB con fecha de expiración, así nadie pierde el avance cuando el bot se reinicia
 - **Puntos "farmeables" (Diosa Moon):** puse separación mínima entre mensajes, bloqueo temporal ante ráfagas y un tamaño mínimo de grupo para que no se puedan acumular puntos con spam
 - **Caché que vencía a las 19:00 (Vesta):** el servidor está en UTC y la caché de "hoy" expiraba a medianoche UTC; pasé el cálculo a hora de Guayaquil
