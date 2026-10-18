@@ -28,7 +28,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 | [Akami](https://t.me/AkamiXbot) | Administración y moderación de grupos | Parto de [FallenRobot](https://github.com/AnonymousX1025/FallenRobot) (licencia MIT) y reescribí gran parte a arquitectura asíncrona. Moderación completa, roles por grupo, antiflood, federaciones, modo nocturno, chatbot con IA y más (ver abajo) |
 | [Penny](https://t.me/PennyPirate_bot) | Administración de grupos con temática pirata | (completar) |
 | [Akami Music](https://t.me/AkamiXmusicbot) | Música y video en grupos y canales | (completar) |
-| [Bocchi Music](https://t.me/BocchiXmusicbot) | Música y videostream | Pyrogram/Kurigram con PyTgCalls, yt-dlp y ffmpeg, hasta 5 cuentas asistentes y varios idiomas; optimización de CPU en un VPS de 1 núcleo |
+| [Bocchi Music](https://t.me/BocchiXmusicbot) | Música y video en llamadas de voz de grupos | Transmisión de audio y video con hasta 5 cuentas asistentes y varios idiomas; límites de recursos en un VPS compartido (un solo núcleo, descargas simultáneas acotadas y espera por usuario), limpieza automática de archivos y respaldos |
 | [Sayomi Whisper](https://t.me/SayomiXwhisperbot) | Mensajes susurrados y privacidad | Arquitectura por plugins (modo inline, privacidad, estadísticas), español e inglés, y reporte de estado a mi página |
 | [Diosa Moon](https://t.me/Diosamoonbot) | Comunidad con juegos, progreso y cumpleaños | Sistema de linajes con quiz, puntos y rankings; cumpleaños por zona horaria; juegos con temporizadores asíncronos; multilenguaje y reanudación de tareas tras reinicios |
 | [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Confesiones anónimas de cara al público, con moderación | Flujo de aprobación en un grupo de admins, publicación de texto y multimedia en un canal con soporte de citas, bloqueo de usuarios, donaciones con Telegram Stars y respaldos diarios |
@@ -71,7 +71,8 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Centralización de la tienda (Puchu):** un único catálogo para eliminar errores de sincronización entre menús
 - **Citas que se perdían al publicar (Moon Confesiones):** al copiar un mensaje que respondía a otro se perdía la cita; reconstruí el contenido con un bloque de cita respetando los límites de caracteres de Telegram, con un respaldo si no cabía
 - **Error de bucle de eventos al arrancar (Moon Confesiones):** el cliente fija su event loop al crearse y un segundo loop rompía el inicio; reutilicé el mismo loop en vez de crear uno nuevo
-  
+- **Límites de recursos en un VPS compartido (Bocchi):** fijé el proceso a un núcleo, limité las descargas simultáneas, añadí espera por usuario, topes de duración y tamaño, y limpieza automática de archivos temporales
+
 ## Qué incluye Diosa Moon
 - **Linajes:** cuatro bandos con un quiz por encuestas, puntos según la actividad, rankings y habilidades de grupo con enfriamiento de 24 horas
 - **Juegos:** Stop con rondas y temporizadores, ahorcado, preguntas programadas, lotería y un juego de estrellas con canje de tickets
