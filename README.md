@@ -57,9 +57,15 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 > Akami parte de [FallenRobot](https://github.com/AnonymousX1025/FallenRobot) (AnonymousX1025, licencia MIT). Los roles por grupo, el antiflood, el chatbot con IA, la reescritura de federaciones y la arquitectura asíncrona son trabajo propio.
 
 ## Qué incluye Bocchi Music
-- **Transmisión en llamadas de voz:** audio y video en los chats de voz de grupos, con hasta 5 cuentas asistentes (userbots) y varios idiomas
-- **Recursos acotados en un VPS compartido:** el proceso se fija a un núcleo (configurable por variable de entorno), con descargas simultáneas limitadas, espera por usuario y topes de duración y tamaño
-- **Limpieza automática:** las carpetas temporales (descargas, caché, archivos de reproducción) se vacían en cada arranque
+- **Reproducción:** `/play` y `/vplay` para audio y video en el chat de voz, `/cplay` y `/cvplay` para transmitir a un canal, y variantes `force` para pasar una pista por delante de la cola
+- **Fuentes:** archivos de audio y video de Telegram (con topes de tamaño y duración), transmisiones en vivo con enlaces m3u8 y enlaces compatibles
+- **Cola y controles:** cola con posición, pausa, reanudar, saltar, repetir y detener, con botones en cada reproducción y una barra de progreso que se actualiza sola
+- **Votación para saltar:** en los grupos que lo activen, un mínimo de votos decide el salto
+- **Permisos por grupo:** `/playmode` y `/settings` definen si controlan solo los admins o todos, el modo de reproducción, los usuarios autorizados y el idioma
+- **Reproducción en canales:** `/channelplay` enlaza un canal, y para vincular uno externo se verifica que quien lo pide sea su propietario
+- **Miniaturas** con portada circular, título, canal y barra de progreso, con caché en disco
+- **Hasta 5 cuentas asistentes** (userbots) y varios idiomas
+- **Recursos acotados en un VPS compartido:** descargas simultáneas limitadas, espera por usuario, topes de duración y tamaño y limpieza de carpetas temporales en cada arranque
 - **Operación:** respaldo diario programado, heartbeat hacia mi página y evento de arranque para detectar bucles de reinicio
 
 ## Arquitectura de Bocchi Music
