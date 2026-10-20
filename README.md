@@ -20,6 +20,7 @@ Backend developer autodidacta en Guayaquil, Ecuador. Programo, despliego y mante
 - **Bases de datos:** MongoDB, PostgreSQL
 - **IA:** integración de varios proveedores de modelos de lenguaje, voz (TTS) y transcripción (Whisper)
 - **Infraestructura:** VPS Linux, despliegue y monitoreo de bots
+- **Cloudflare:** Workers, KV, D1 y Cron Triggers (monitoreo y sitio web)
 - **Frontend:** HTML, CSS, JavaScript
 
 ## Darkangel Bots
@@ -37,6 +38,17 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 | [Puchu](https://t.me/Puchuflusbot) | Juegos y economía (código recibido; lo mantengo y desarrollo) | Juegos multijugador por turnos en grupos, economía con tienda, regalos e insignias, rankings con medallas, apuestas del Mundial 2026 con cuadro de eliminatorias, sistema de temáticas, difusiones masivas, respaldos y comando de estado con métricas del servidor (ver abajo) |
 
 > En varios bots la idea y el diseño son de otras personas del equipo; la programación y el servidor son míos. La excepción es Puchu, que recibí ya creado y del que me encargo del mantenimiento y las mejoras. Los puedes probar directamente desde los enlaces.
+
+## Monitoreo y estado de los bots
+Los bots reportan a un sistema de monitoreo propio que corre en Cloudflare (Workers, KV, D1 y Cron Triggers), pensado para caber en el plan gratuito. Los bots solo hacen peticiones salientes, así que el VPS no necesita puertos abiertos ni certificados para esto.
+
+- **Heartbeat:** cada bot envía un latido cada 10 a 20 minutos al Worker de [darkangelbots.dev](https://darkangelbots.dev/), autenticado con una cabecera secreta. Un bot figura como "vivo" si su último latido tiene menos de 45 minutos, como "muerto" si no, o como "mantenimiento" si lo marco a mano
+- **Detección de bucles de reinicio:** cada arranque envía un evento `start` que se guarda en D1 sin límite de frecuencia. Un bot sano manda uno al día, y uno que se reinicia solo manda uno cada pocos minutos, aunque su latido siga diciendo "vivo"
+- **Mensaje fijado en un canal de Telegram:** un cron cada 2 minutos edita siempre el mensaje con el estado y la hora de la última revisión, y solo lo vuelve a fijar (para notificar a los suscriptores) cuando algún bot cambia de estado. El aviso de servicio de Telegram se borra solo
+- **Alerta aparte** en el grupo oficial de Mephisto Ryu cuando cambia su estado
+- **Historial de disponibilidad en D1:** cada cambio de estado queda registrado con su hora
+- **Modo mantenimiento:** `/mantenimiento <bot> on|off` desde Telegram, solo para administradores y con el webhook verificado por token secreto, o mediante la API autenticada
+- **Panel público:** [darkangelbots.dev/estado](https://darkangelbots.dev/estado) consulta `/status.json` cada minuto y muestra cuántos bots están activos, en varios idiomas
 
 ## Qué incluye Akami
 - **Moderación:** ban, ban temporal, ban con borrado de mensajes, kick, mute, mute temporal, advertencias con límite y sanción configurables, filtros que advierten automáticamente y registro de las acciones que los admins hacen a mano desde Telegram
@@ -166,6 +178,10 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Respuestas de IA malformadas (Vesta):** extraigo el JSON aunque venga con markdown o texto alrededor y valido tipos, rangos y largos antes de guardarlo
 - **`/start` doble con confesiones (Vesta):** el deep-link de confesiones corta la propagación del mensaje para que no llegue también el `/start` con GIF
 - **Ranking semanal estable (Vesta):** `/topsignos` se genera con una semilla derivada del ámbito y la semana, y se guarda con inserción condicional para evitar carreras
+- **Límite de escrituras de Workers KV (Monitoreo):** consolidé las llaves en un solo objeto JSON y limité las escrituras a una cada 30 minutos por bot, sin importar la frecuencia del latido, para no agotar el tope diario gratuito
+- **Avisos en bucle (Monitoreo):** el mensaje del canal solo se vuelve a fijar cuando cambia el estado de algún bot, y el nuevo estado se guarda antes de tocar el pin para no entrar en un ciclo de fijar y desfijar si KV deja de aceptar escrituras
+- **Bots "vivos" que en realidad se reiniciaban (Monitoreo):** el latido por sí solo no revela un bucle de reinicios, así que añadí un evento de arranque sin límite de frecuencia para verlo
+- **Falsos "muertos" (Monitoreo):** el umbral de 45 minutos equivale a dos latidos perdidos del intervalo más largo más un margen, para que un latido perdido no marque un bot como caído
 
 ## Otros proyectos
 - **[Vorath](https://t.me/Vorath_bot):** biblioteca de juegos retro dentro de Telegram. Bot en Pyrogram (Kurigram) cuyo comando `/arcade` abre, con un botón, una miniapp de Telegram con la biblioteca de juegos; idioma por usuario y por grupo, modo ligero para dispositivos de gama baja, respaldos automáticos y reinicio con actualización desde el propio chat
