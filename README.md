@@ -2,196 +2,196 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=Ronny&fontSize=60" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&center=true&width=500&lines=Backend+developer;Telegram+bots+en+producci%C3%B3n;Node.js+%26+Python" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&center=true&width=500&lines=Backend+developer;Telegram+bots+in+production;Node.js+%26+Python" />
 
 <img src="https://skillicons.dev/icons?i=python,nodejs,mongodb,postgres,linux,js,html,css" />
 
-**🌐 Idioma:** Español · [English](README.en.md)
+**🌐 Language:** [Español](README.md) · English
 
 <br><br>
 
 </div>
 
-Backend developer autodidacta en Guayaquil, Ecuador. Programo, despliego y mantengo bots de Telegram en producción: desde el código hasta el servidor.
+Self-taught backend developer based in Guayaquil, Ecuador. I write, deploy and maintain Telegram bots in production: from the code all the way to the server.
 
 ## Stack
 - **Python:** Pyrogram, Kurigram, Telethon, PyTgCalls
 - **Node.js:** Telegraf
-- **Bases de datos:** MongoDB, PostgreSQL
-- **IA:** integración de varios proveedores de modelos de lenguaje, voz (TTS) y transcripción (Whisper)
-- **Infraestructura:** VPS Linux, despliegue y monitoreo de bots
-- **Cloudflare:** Workers, KV, D1 y Cron Triggers (monitoreo y sitio web)
+- **Databases:** MongoDB, PostgreSQL
+- **AI:** integration of several language model providers, voice (TTS) and transcription (Whisper)
+- **Infrastructure:** Linux VPS, bot deployment and monitoring
+- **Cloudflare:** Workers, KV, D1 and Cron Triggers (monitoring and website)
 - **Frontend:** HTML, CSS, JavaScript
 
 ## Darkangel Bots
-Red de bots de Telegram con moderación, música, juegos e interacción social. Mantengo yo solo los bots, los servidores y el sitio web.
+A network of Telegram bots for moderation, music, games and social interaction. I maintain the bots, the servers and the website by myself.
 
-| Bot | Qué hace | Lo que hice |
-|---|---|---|
-| [Akami](https://t.me/AkamiXbot) | Administración y moderación de grupos | Parto de [FallenRobot](https://github.com/AnonymousX1025/FallenRobot) (licencia MIT) y reescribí gran parte a arquitectura asíncrona. Moderación completa, roles por grupo, antiflood, federaciones, modo nocturno, chatbot con IA y más (ver abajo) |
-| [Bocchi Music](https://t.me/BocchiXmusicbot) | Música y video en llamadas de voz de grupos | Parto de [AnonXMusic](https://github.com/AnonymousX1025/AnonXMusic) (licencia MIT) y reescribí gran parte: transmisión de audio y video con hasta 5 cuentas asistentes y varios idiomas, límites de recursos para un VPS compartido, ciclo de vida más robusto, respaldos y monitoreo (ver abajo) |
-| [Sayomi Whisper](https://t.me/SayomiXwhisperbot) | Mensajes susurrados y privacidad | Arquitectura por plugins (modo inline, privacidad, estadísticas), español e inglés, y reporte de estado a mi página |
-| [Diosa Moon](https://t.me/Diosamoonbot) | Comunidad con juegos, progreso y cumpleaños | Sistema de linajes con quiz, puntos y rankings; cumpleaños por zona horaria; juegos con temporizadores asíncronos; multilenguaje y reanudación de tareas tras reinicios |
-| [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Confesiones anónimas de cara al público, con moderación | Flujo de aprobación en un grupo de admins, publicación de texto y multimedia en un canal con soporte de citas, bloqueo de usuarios, donaciones con Telegram Stars y respaldos diarios |
-| [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Juego de rol con economía y rituales | Economía con monedas, familiares y recompensas por anuncios; migración de MongoDB Atlas a un servidor propio |
-| [Vesta](https://t.me/Orusvesta_bot) | Horóscopo diario y carta natal | Miniapp de Telegram en 4 idiomas con horóscopo diario, semanal y mensual, compatibilidad, perfil astral y carta natal con cálculo astronómico propio; astrólogo con IA con cuotas diarias validadas en el servidor; confesiones anónimas y comandos de signos en el bot |
-| [Puchu](https://t.me/Puchuflusbot) | Juegos y economía (código recibido; lo mantengo y desarrollo) | Juegos multijugador por turnos en grupos, economía con tienda, regalos e insignias, rankings con medallas, apuestas del Mundial 2026 con cuadro de eliminatorias, sistema de temáticas, difusiones masivas, respaldos y comando de estado con métricas del servidor (ver abajo) |
+| Bot | What it does | What I did | Docs |
+|---|---|---|---|
+| [Akami](https://t.me/AkamiXbot) | Group administration and moderation | Based on [FallenRobot](https://github.com/AnonymousX1025/FallenRobot) (MIT license), with a large part rewritten to an asynchronous architecture. Full moderation, per-group roles, antiflood, federations, night mode, AI chatbot and more (see below) | [Docs](https://darkangelbots.dev/akami/akami) |
+| [Bocchi Music](https://t.me/BocchiXmusicbot) | Music and video in group voice chats | Based on [AnonXMusic](https://github.com/AnonymousX1025/AnonXMusic) (MIT license), with a large part rewritten: audio and video streaming with up to 5 assistant accounts and multiple languages, resource limits for a shared VPS, a more robust lifecycle, backups and monitoring (see below) | [Docs](https://darkangelbots.dev/bocchi/bocchi) |
+| [Sayomi Whisper](https://t.me/SayomiXwhisperbot) | Whispered messages and privacy | Plugin-based architecture (inline mode, privacy, statistics), Spanish and English, and status reporting to my website | [Docs](https://darkangelbots.dev/sayomi/sayomi) |
+| [Diosa Moon](https://t.me/Diosamoonbot) | Community with games, progression and birthdays | Lineage system with quiz, points and rankings; timezone-aware birthdays; games with asynchronous timers; multilanguage and task resumption after restarts | [Docs](https://darkangelbots.dev/diosamoon/diosamoon) |
+| [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Public-facing anonymous confessions with moderation | Approval flow in an admin group, text and media publishing to a channel with quote support, user blocking, Telegram Stars donations and daily backups | [Docs](https://darkangelbots.dev/moonconfesiones/moonconfesiones) |
+| [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Role-playing game with economy and rituals | Economy with coins, familiars and rewards for watching ads; migration from MongoDB Atlas to a self-hosted server | [Docs](https://darkangelbots.dev/mephisto/mephisto) |
+| [Vesta](https://t.me/Orusvesta_bot) | Daily horoscope and natal chart | 4-language Telegram miniapp with daily, weekly and monthly horoscopes, compatibility, astral profile and natal chart with custom astronomical calculation; AI astrologer with server-validated daily quotas; anonymous confessions and zodiac sign commands in the bot | — |
+| [Puchu](https://t.me/Puchuflusbot) | Games and economy (inherited code; I maintain and develop it) | Turn-based multiplayer games in groups, economy with shop, gifts and badges, rankings with medals, World Cup 2026 betting with a knockout bracket, theme system, mass broadcasts, backups and a status command with server metrics (see below) | [Docs](https://darkangelbots.dev/puchu/puchu) |
 
-> En varios bots la idea y el diseño son de otras personas del equipo; la programación y el servidor son míos. La excepción es Puchu, que recibí ya creado y del que me encargo del mantenimiento y las mejoras. Los puedes probar directamente desde los enlaces.
+> In several bots the idea and design come from other members of the team; the programming and the server are mine. The exception is Puchu, which I received already built and for which I handle maintenance and improvements. You can try them directly from the links.
 
-## Monitoreo y estado de los bots
-Los bots reportan a un sistema de monitoreo propio que corre en Cloudflare (Workers, KV, D1 y Cron Triggers), pensado para caber en el plan gratuito. Los bots solo hacen peticiones salientes, así que el VPS no necesita puertos abiertos ni certificados para esto.
+## Bot monitoring and status
+The bots report to a custom monitoring system running on Cloudflare (Workers, KV, D1 and Cron Triggers), designed to fit in the free plan. The bots only make outbound requests, so the VPS needs no open ports or certificates for this.
 
-- **Heartbeat:** cada bot envía un latido cada 10 a 20 minutos al Worker de [darkangelbots.dev](https://darkangelbots.dev/), autenticado con una cabecera secreta. Un bot figura como "vivo" si su último latido tiene menos de 45 minutos, como "muerto" si no, o como "mantenimiento" si lo marco a mano
-- **Detección de bucles de reinicio:** cada arranque envía un evento `start` que se guarda en D1 sin límite de frecuencia. Un bot sano manda uno al día, y uno que se reinicia solo manda uno cada pocos minutos, aunque su latido siga diciendo "vivo"
-- **Mensaje fijado en un canal de Telegram:** un cron cada 2 minutos edita siempre el mensaje con el estado y la hora de la última revisión, y solo lo vuelve a fijar (para notificar a los suscriptores) cuando algún bot cambia de estado. El aviso de servicio de Telegram se borra solo
-- **Alerta aparte** en el grupo oficial de Mephisto Ryu cuando cambia su estado
-- **Historial de disponibilidad en D1:** cada cambio de estado queda registrado con su hora
-- **Modo mantenimiento:** `/mantenimiento <bot> on|off` desde Telegram, solo para administradores y con el webhook verificado por token secreto, o mediante la API autenticada
-- **Panel público:** [darkangelbots.dev/estado](https://darkangelbots.dev/estado) consulta `/status.json` cada minuto y muestra cuántos bots están activos, en varios idiomas
+- **Heartbeat:** every bot sends a heartbeat every 10 to 20 minutes to the [darkangelbots.dev](https://darkangelbots.dev/) Worker, authenticated with a secret header. A bot is "alive" if its last heartbeat is less than 45 minutes old, "dead" if not, or "maintenance" if I set it manually
+- **Restart loop detection:** every startup sends a `start` event that is stored in D1 with no rate limit. A healthy bot sends one a day, while one that keeps restarting sends one every few minutes, even if its heartbeat still says "alive"
+- **Pinned message in a Telegram channel:** a cron every 2 minutes always edits the message with the status and the time of the last check, and only re-pins it (to notify subscribers) when a bot changes state. Telegram's service notice deletes itself
+- **Separate alert** in Mephisto Ryu's official group when its status changes
+- **Availability history in D1:** every status change is recorded with its timestamp
+- **Maintenance mode:** `/mantenimiento <bot> on|off` from Telegram, admins only and with the webhook verified by a secret token, or through the authenticated API
+- **Public dashboard:** [darkangelbots.dev/estado](https://darkangelbots.dev/estado) queries `/status.json` every minute and shows how many bots are active, in several languages
 
-## Qué incluye Akami
-- **Moderación:** ban, ban temporal, ban con borrado de mensajes, kick, mute, mute temporal, advertencias con límite y sanción configurables, filtros que advierten automáticamente y registro de las acciones que los admins hacen a mano desde Telegram
-- **Administración:** promoción y degradación de admins por niveles, títulos y etiquetas, anclado de mensajes, enlaces de invitación y gestión de foto, título y descripción del grupo
-- **Protección:** antiflood con ventana de tiempo y cinco modos de sanción, antiraid, anti canal vinculado, lista negra, federaciones de grupos, limpieza de cuentas eliminadas y modo nocturno que cierra y abre el grupo según horario y zona horaria
-- **Roles por grupo (diseño propio):** Rey, Reina, Torres, Alfiles, Caballos y Peones, con comandos y límites por rol, sincronizados con las etiquetas nativas de Telegram
-- **Comunidad:** bienvenidas y despedidas con multimedia, mute de bienvenida, solicitudes de ingreso, AFK y frases en sticker (con packs por grupo, valoraciones y caché propios, sobre un servicio de renderizado de [QuotLy](https://github.com/LyoSU/quote-bot), licencia MIT)
-- **Chatbot con IA:** conversación con memoria por usuario, respaldo automático entre cinco proveedores de modelos con rotación de claves, respuestas en nota de voz y transcripción de notas de voz recibidas, con panel de estado
-- **Utilidades:** zip y unzip con cifrado AES-256, texto a mano alzada en imagen y borrado masivo de mensajes
-- **Paneles interactivos con botones** para configurar casi todo sin escribir comandos
+## What Akami includes
+- **Moderation:** ban, temporary ban, ban with message deletion, kick, mute, temporary mute, warnings with configurable limit and penalty, filters that warn automatically, and logging of the actions admins take manually from Telegram
+- **Administration:** tiered admin promotion and demotion, titles and tags, message pinning, invite links, and management of the group's photo, title and description
+- **Protection:** antiflood with a time window and five penalty modes, antiraid, anti linked channel, blacklist, group federations, cleanup of deleted accounts, and a night mode that closes and opens the group based on schedule and timezone
+- **Per-group roles (own design):** King, Queen, Rooks, Bishops, Knights and Pawns, with commands and limits per role, synced with Telegram's native tags
+- **Community:** welcome and goodbye messages with media, welcome mute, join requests, AFK and sticker quotes (with per-group packs, ratings and own caches, on top of a rendering service from [QuotLy](https://github.com/LyoSU/quote-bot), MIT license)
+- **AI chatbot:** conversation with per-user memory, automatic fallback across five model providers with key rotation, voice note replies and transcription of received voice notes, with a status panel
+- **Utilities:** zip and unzip with AES-256 encryption, handwritten-style text on images, and bulk message deletion
+- **Interactive button panels** to configure almost everything without typing commands
 
-## Arquitectura de Akami
-- **Tres clientes de Telegram en un mismo proceso** (PTB por webhook, Pyrogram y Telethon), con ajuste de conexiones y concurrencia para que ninguno bloquee a los otros
-- **Federaciones de grupos** con límite global de peticiones y manejo de esperas por flood, para sancionar en cientos de chats sin ser bloqueado
-- **Tareas de limpieza periódicas** para cachés y flujos abandonados, que evitan fugas de memoria
-- **Cierre ordenado** ante señales del sistema y **respaldos automáticos** de Postgres y Mongo con copia diaria en la nube
+## Akami's architecture
+- **Three Telegram clients in a single process** (PTB via webhook, Pyrogram and Telethon), with tuned connections and concurrency so none of them blocks the others
+- **Group federations** with a global request limit and flood-wait handling, to sanction across hundreds of chats without getting blocked
+- **Periodic cleanup tasks** for caches and abandoned flows, preventing memory leaks
+- **Graceful shutdown** on system signals and **automatic backups** of Postgres and Mongo with a daily cloud copy
 
-> Akami parte de [FallenRobot](https://github.com/AnonymousX1025/FallenRobot) (AnonymousX1025, licencia MIT). Los roles por grupo, el antiflood, el chatbot con IA, la reescritura de federaciones y la arquitectura asíncrona son trabajo propio.
+> Akami is based on [FallenRobot](https://github.com/AnonymousX1025/FallenRobot) (AnonymousX1025, MIT license). The per-group roles, the antiflood, the AI chatbot, the federation rewrite and the asynchronous architecture are my own work.
 
-## Qué incluye Bocchi Music
-- **Reproducción:** `/play` y `/vplay` para audio y video en el chat de voz, `/cplay` y `/cvplay` para transmitir a un canal, y variantes `force` para pasar una pista por delante de la cola
-- **Fuentes:** archivos de audio y video de Telegram (con topes de tamaño y duración), transmisiones en vivo con enlaces m3u8 y enlaces compatibles
-- **Cola y controles:** cola con posición, pausa, reanudar, saltar, repetir y detener, con botones en cada reproducción y una barra de progreso que se actualiza sola
-- **Votación para saltar:** en los grupos que lo activen, un mínimo de votos decide el salto
-- **Permisos por grupo:** `/playmode` y `/settings` definen si controlan solo los admins o todos, el modo de reproducción, los usuarios autorizados y el idioma
-- **Reproducción en canales:** `/channelplay` enlaza un canal, y para vincular uno externo se verifica que quien lo pide sea su propietario
-- **Miniaturas** con portada circular, título, canal y barra de progreso, con caché en disco
-- **Hasta 5 cuentas asistentes** (userbots) y varios idiomas
-- **Recursos acotados en un VPS compartido:** descargas simultáneas limitadas, espera por usuario, topes de duración y tamaño y limpieza de carpetas temporales en cada arranque
-- **Operación:** respaldo diario programado, heartbeat hacia mi página y evento de arranque para detectar bucles de reinicio
+## What Bocchi Music includes
+- **Playback:** `/play` and `/vplay` for audio and video in the voice chat, `/cplay` and `/cvplay` to stream to a channel, and `force` variants to put a track ahead of the queue
+- **Sources:** Telegram audio and video files (with size and duration caps), live streams with m3u8 links, and compatible links
+- **Queue and controls:** queue with position, pause, resume, skip, loop and stop, with buttons on every playback and a self-updating progress bar
+- **Vote to skip:** in groups that enable it, a minimum number of votes decides the skip
+- **Per-group permissions:** `/playmode` and `/settings` define whether only admins or everyone can control playback, the playback mode, authorized users and language
+- **Channel playback:** `/channelplay` links a channel, and to link an external one the bot verifies that the requester is its owner
+- **Thumbnails** with circular cover art, title, channel and progress bar, with disk cache
+- **Up to 5 assistant accounts** (userbots) and multiple languages
+- **Bounded resources on a shared VPS:** limited simultaneous downloads, per-user cooldown, duration and size caps, and cleanup of temporary folders on every startup
+- **Operations:** scheduled daily backup, heartbeat to my website and a startup event to detect restart loops
 
-## Arquitectura de Bocchi Music
-- **Pyrogram (Kurigram) + PyTgCalls** con bot y asistentes en el mismo proceso y un único event loop compartido
-- **Afinidad de CPU configurable:** `BOCCHI_CPUS` define los núcleos del proceso y de sus hijos (ffmpeg incluido); por defecto solo el núcleo 0
-- **Cierre ordenado:** el apagado vive en un `finally`, así que ante un error o una salida forzada se cierran el scheduler, el bot, el userbot y las sesiones HTTP, y un fallo en un paso no impide los siguientes
-- **Sesiones HTTP compartidas** (Deezer y miniaturas) que se crean una vez y se cierran al apagar
-- **Planificador asíncrono (APScheduler)** con zona horaria de Guayaquil para el respaldo diario y el heartbeat cada 10 minutos
+## Bocchi Music's architecture
+- **Pyrogram (Kurigram) + PyTgCalls** with the bot and assistants in the same process and a single shared event loop
+- **Configurable CPU affinity:** `BOCCHI_CPUS` defines the cores for the process and its children (ffmpeg included); by default only core 0
+- **Graceful shutdown:** the teardown lives in a `finally`, so on an error or forced exit the scheduler, bot, userbot and HTTP sessions are closed, and a failure in one step doesn't prevent the following ones
+- **Shared HTTP sessions** (Deezer and thumbnails) created once and closed on shutdown
+- **Asynchronous scheduler (APScheduler)** with the Guayaquil timezone for the daily backup and the heartbeat every 10 minutes
 
-> Bocchi Music parte de [AnonXMusic](https://github.com/AnonymousX1025/AnonXMusic) (AnonymousX1025, licencia MIT). La gestión de recursos, el ciclo de vida y cierre, los respaldos, el monitoreo y la reescritura de gran parte del código son trabajo propio.
+> Bocchi Music is based on [AnonXMusic](https://github.com/AnonymousX1025/AnonXMusic) (AnonymousX1025, MIT license). Resource management, lifecycle and shutdown, backups, monitoring and the rewrite of a large part of the code are my own work.
 
-## Qué incluye Diosa Moon
-- **Linajes:** cuatro bandos con un quiz por encuestas, puntos según la actividad, rankings y habilidades de grupo con enfriamiento de 24 horas
-- **Juegos:** Stop con rondas y temporizadores, ahorcado, preguntas programadas, lotería y un juego de estrellas con canje de tickets
-- **Cumpleaños** con zona horaria por usuario, avisos al grupo y en privado sin duplicados
-- **Comunidad:** bienvenidas con aprobación de solicitudes, AFK, frases con panel por grupo y calendario lunar
-- **Operación:** respaldos automáticos y latido periódico para detectar reinicios en bucle
+## What Diosa Moon includes
+- **Lineages:** four factions with a poll-based quiz, activity-based points, rankings and group abilities with a 24-hour cooldown
+- **Games:** Stop with rounds and timers, hangman, scheduled questions, lottery and a stars game with ticket redemption
+- **Birthdays** with per-user timezone, group and private notifications without duplicates
+- **Community:** welcomes with join request approval, AFK, quotes with a per-group panel and a lunar calendar
+- **Operations:** automatic backups and periodic heartbeat to detect restart loops
 
-## Qué incluye Vesta
-- **Miniapp de horóscopo:** hoy, semana y mes para los 12 signos en español, inglés, italiano y francés, con fondo animado y modo ligero que se activa solo en dispositivos de gama baja
-- **Horóscopo en caché:** scrapeo de horoscope.com guardado en MongoDB con expiración por período, traducciones cacheadas y precalentado nocturno de todos los signos, para que nadie pague un scrapeo en vivo
-- **Astrólogo con IA:** chat con el horóscopo del día como contexto, con cuota diaria por usuario verificada en el servidor
-- **Compatibilidad, perfil astral y carta natal:** los prompts se arman en el servidor con datos validados, las respuestas JSON se validan y se comparten por caché entre usuarios
-- **Carta natal calculada en el cliente:** posiciones de Sol, Luna y planetas con ecuación de Kepler, ascendente a partir de la ciudad y la hora, y rueda zodiacal en SVG
-- **Anuncios recompensados (Monetag):** consultas extra por ver un anuncio, con el premio decidido por el servidor y no por el cliente
-- **Bot:** `/vesta` abre la miniapp, 12 comandos de frases por signo con pool sin repetición, `/topsignos` con ranking semanal (grupo o global) y confesiones anónimas con tarjeta generada con Pillow, en modo libre o con aprobación
+## What Vesta includes
+- **Horoscope miniapp:** today, week and month for all 12 signs in Spanish, English, Italian and French, with an animated background and a lightweight mode that activates automatically on low-end devices
+- **Cached horoscope:** scraping of horoscope.com stored in MongoDB with per-period expiration, cached translations and nightly pre-warming of all signs, so nobody pays for a live scrape
+- **AI astrologer:** chat with the day's horoscope as context, with a per-user daily quota verified on the server
+- **Compatibility, astral profile and natal chart:** prompts are built on the server with validated data, JSON responses are validated and shared through cache between users
+- **Natal chart calculated on the client:** positions of the Sun, Moon and planets using Kepler's equation, ascendant from the city and time, and a zodiac wheel in SVG
+- **Rewarded ads (Monetag):** extra queries for watching an ad, with the reward decided by the server and not the client
+- **Bot:** `/vesta` opens the miniapp, 12 per-sign quote commands with a no-repeat pool, `/topsignos` with a weekly ranking (group or global) and anonymous confessions with a card generated with Pillow, in free mode or with approval
 
-## Arquitectura de Vesta
-- **Bot y API en un mismo proceso:** Pyrogram (Kurigram) y un servidor aiohttp comparten el event loop
-- **Autenticación de la miniapp:** verificación HMAC del `initData` firmado de Telegram, con caducidad
-- **Cadena de proveedores de IA:** Groq → Gemini → OpenRouter, con rotación de claves, enfriamiento ante límites de uso y salto rápido al siguiente proveedor
-- **Operación:** respaldos automáticos cada 30 minutos con copia diaria, heartbeat hacia mi página y evento de arranque para detectar bucles de reinicio
+## Vesta's architecture
+- **Bot and API in the same process:** Pyrogram (Kurigram) and an aiohttp server share the event loop
+- **Miniapp authentication:** HMAC verification of Telegram's signed `initData`, with expiration
+- **AI provider chain:** Groq → Gemini → OpenRouter, with key rotation, cooldown on rate limits and fast fallthrough to the next provider
+- **Operations:** automatic backups every 30 minutes with a daily copy, heartbeat to my website and a startup event to detect restart loops
 
-## Qué incluye Puchu
-- **Juegos multijugador en grupos:** Bandido (detectives contra bandidos, con habitaciones, votación y objetos), Veloz, Tornado, Memoria, Ruleta, Dado, Bomba, Globo, Lobo y Tragapuchus (tragamonedas con bote acumulado). Cada partida tiene sala de espera, mínimo de jugadores, multiplicadores para admins y bonus en partidas especiales
-- **Lista de espera:** `/puchunext` avisa por privado cuando arranca una nueva partida en el grupo
-- **Economía:** puchupuntos, tienda con catálogo único, regalos entre usuarios, transferencias con teclado numérico y comisión dinámica, títulos personalizados e insignias comprables con tope por usuario
-- **Rankings y medallas:** top global, mensual y por juego, con medallas trimestrales repartidas automáticamente
-- **Puchutime:** evento que reparte puntos a quienes escriben primero, escalonado entre los grupos afiliados
-- **Apuestas del Mundial 2026:** multiplicadores de x1 a x1000, pozo compartido entre los acertantes, reembolso si nadie acierta, retiro en partidos suspendidos, calendario con horas por país, `/topmundial` y cuadro de eliminatorias generado como imagen. Ya terminado: se activa y desactiva con una sola bandera
-- **Temáticas ("masivas"):** cada usuario elige un personaje por grupo que reemplaza su nombre en los juegos, con cambios limitados y de pago
-- **Comandos de comunidad:** `/puchushipp`, `/puchuconsejo`, `/puchununca`, verdad o reto en varios idiomas, preguntas de personalidad y GIFs de acciones (`!kiss`, `!hug`…) filtrados por género
-- **Administración:** difusión a grupos y usuarios con barra de progreso, lista negra de chats, reinicio de partidas colgadas y actualización con `git pull` más reinicio desde el propio chat
-- **Multilenguaje** por grupo y por usuario
+## What Puchu includes
+- **Multiplayer games in groups:** Bandido (detectives vs. bandits, with rooms, voting and items), Veloz, Tornado, Memoria, Ruleta, Dado, Bomba, Globo, Lobo and Tragapuchus (slot machine with a progressive jackpot). Every game has a waiting room, a minimum player count, multipliers for admins and bonuses in special games
+- **Waiting list:** `/puchunext` notifies you privately when a new game starts in the group
+- **Economy:** puchupoints, shop with a single catalog, gifts between users, transfers with a numeric keypad and dynamic fee, custom titles and purchasable badges with a per-user cap
+- **Rankings and medals:** global, monthly and per-game top, with quarterly medals awarded automatically
+- **Puchutime:** event that hands out points to whoever writes first, staggered across affiliated groups
+- **World Cup 2026 betting:** multipliers from x1 to x1000, prize pool shared among winners, refund if nobody wins, withdrawal in suspended matches, schedule with times per country, `/topmundial` and a knockout bracket generated as an image. Now finished: toggled on and off with a single flag
+- **Themes ("masivas"):** each user picks a character per group that replaces their name in games, with limited and paid changes
+- **Community commands:** `/puchushipp`, `/puchuconsejo`, `/puchununca`, truth or dare in several languages, personality questions and action GIFs (`!kiss`, `!hug`…) filtered by gender
+- **Administration:** broadcast to groups and users with a progress bar, chat blacklist, reset of stuck games and update via `git pull` plus restart from the chat itself
+- **Multilanguage** per group and per user
 
-## Arquitectura de Puchu
-- **Node.js con Telegraf y MongoDB (Mongoose)**, con estado de las partidas en archivos temporales que permiten retomar los temporizadores tras un reinicio
-- **Manejo centralizado de errores:** los errores inofensivos de Telegram se registran de forma compacta y el resto se reporta con su traza a un grupo de logs
-- **Caché de `getChatMember`** con expiración y limpieza periódica para no saturar la API
-- **Respaldos:** `mongodump` rotativo cada 3 horas y envío diario de la copia más reciente a los creadores, dividida en partes si es grande
-- **Monitoreo:** heartbeat hacia mi página y comando de estado con latencia, CPU, RAM, disco, memoria del proceso y estado de MongoDB
+## Puchu's architecture
+- **Node.js with Telegraf and MongoDB (Mongoose)**, with game state in temporary files that allow timers to resume after a restart
+- **Centralized error handling:** harmless Telegram errors are logged compactly and the rest are reported with their trace to a logs group
+- **`getChatMember` cache** with expiration and periodic cleanup to avoid saturating the API
+- **Backups:** rotating `mongodump` every 3 hours and daily delivery of the latest copy to the creators, split into parts if large
+- **Monitoring:** heartbeat to my website and a status command with latency, CPU, RAM, disk, process memory and MongoDB status
 
-## Problemas técnicos que resolví
-- **Condiciones de carrera en apuestas (Puchu):** bloqueos por usuario para evitar apuestas duplicadas o cobradas dos veces por doble toque o reintentos de Telegram
-- **Apuestas que podían cobrar de más o de menos (Puchu):** el selector arrancaba siempre en x1 aunque el usuario ya tuviera una apuesta, la validación de saldo comparaba contra el total en vez de la diferencia al modificar y cambiar de resultado hacía perder la apuesta anterior sin reembolso; ahora arranca en la cantidad real, valida el costo real y exige retirar antes de apostar a otro resultado
-- **Cuadro de eliminatorias que no avanzaba (Puchu):** faltaba el mapeo de octavos a cuartos, semifinales y final, y de los perdedores al tercer puesto; los ganadores no pasaban de ronda y el cuadro se quedaba en "?"
-- **API de resultados poco confiable (Puchu):** protegí el estado y los goleadores cargados a mano, evité que el marcador retroceda, descarté estados imposibles (segundo tiempo antes de tiempo) y añadí un respaldo con una segunda fuente de datos
-- **Goles anunciados dos veces (Puchu):** cuando coincidían el aviso manual y la actualización de la API se anunciaba el mismo gol dos veces; ahora cada gol tiene una clave de anuncio y se compara el marcador antes de avisar
-- **Horarios de partidos en zonas distintas (Puchu):** cada estadio tiene su propio huso horario y el calendario muestra la hora en varios países
-- **Premios sin ganadores (Puchu):** si nadie acierta se reembolsa a todos y el partido queda marcado para que el historial lo muestre bien
-- **Dos usuarios con el mismo personaje (Puchu):** un índice único por grupo y temática lo impide, y si el cambio falla en el último instante se reembolsa el costo
-- **Jugadores que "resucitaban" en la ruleta (Puchu):** un `await` antes de guardar permitía que un callback tardío pisara el estado de eliminado; ahora el estado se calcula y se guarda de forma síncrona
-- **Teclados vacíos en Tornado (Puchu):** celdas sin texto hacían fallar a Telegram con "Can't find field text"; ahora se omiten y no se envía un teclado vacío
-- **Partidas trabadas por errores (Puchu):** Tragapuchus solo liberaba el chat en el flujo feliz; ahora lo hace también ante cualquier error, y hay un comando para liberar partidas colgadas y los bloqueos de sus jugadores
-- **Migración de insignias sin duplicar (Puchu):** al separar las insignias comprables en identificadores nuevos, escribí una migración idempotente que acredita lo que ya tenían respetando el tope por usuario
-- **Modo "cambiar bienvenida" que se quedaba bloqueado (Puchu):** añadí expiración de 2 minutos para que un admin que abandona el panel no deje a los demás sin poder editar
-- **Puchutime sin flood (Puchu):** lo reescribí con un candado de ejecución, un único aviso por grupo sin jugadores suficientes y el intervalo repartido según la cantidad de grupos
-- **Migración de grupo a supergrupo (Puchu):** al migrar, la configuración y los registros de jugadores pasan al nuevo identificador
-- **Límites de Telegram (Puchu):** envíos con reintento según `retry_after` y ediciones espaciadas en los mensajes en vivo para no recibir 429
-- **Carga del VPS (Puchu):** bajé el respaldo rotativo de cada 30 minutos a cada 3 horas y lo guardé fuera de la carpeta que vigila nodemon
-- **Arranque que no confirmaba conexión (Puchu):** `bot.launch()` de Telegraf no se resuelve hasta que el bot se detiene; confirmo la conexión con `getMe()` y recién ahí inicio el heartbeat
-- **Centralización de la tienda (Puchu):** un único catálogo para eliminar errores de sincronización entre menús
-- **Actualizaciones repetidas tras un reinicio (Akami):** el bot reprocesaba mensajes viejos; lo resolví con un handler de prioridad máxima y deduplicación con estructuras de memoria
-- **Bans permanentes por error (Akami):** en el antiflood con sanción temporal, si el mensaje ya estaba borrado el bot no leía la duración y baneaba para siempre; ahora usa el valor guardado y tiene un respaldo seguro
-- **Contador de flood corrompido (Akami):** los mensajes en cola de un usuario ya silenciado borraban el progreso de otros; ahora los ignora con una caché de miembros que se invalida al sancionar
-- **Borrado masivo sin leer el historial (Akami):** los bots no pueden leer mensajes antiguos, así que borro por rango de identificadores; si un lote falla por mensajes de servicio, lo divido a la mitad hasta aislar el problemático, y retomo tras las esperas por flood
-- **Modo nocturno que se corrige solo (Akami):** comparo el horario por rango, así que tras un reinicio el grupo recupera su estado correcto en menos de un minuto
-- **Caída de proveedores de IA (Akami):** el chatbot pasa automáticamente al siguiente proveedor y rota claves y modelos cuando uno falla
-- **Spam de logs al configurar (Akami):** cada clic en el panel generaba un aviso; agregué una espera de 5 segundos para enviar un solo registro con el valor final
-- **Logs que desaparecían (Mephisto Ryu):** un logger mal configurado tragaba todos los mensajes informativos; lo encontré y arreglé
-- **Datos inconsistentes en MongoDB (Mephisto Ryu):** detecté que algunos usuarios se guardaban con otro tipo de identificador y quedaban invisibles para el resto del bot
-- **Límite de Telegram en botones (Mephisto Ryu):** un diccionario completo se serializaba dentro de los datos del botón y superaba el límite de 64 bytes
-- **Citas que se perdían al publicar (Moon Confesiones):** al copiar un mensaje que respondía a otro se perdía la cita; reconstruí el contenido con un bloque de cita respetando los límites de caracteres de Telegram, con un respaldo si no cabía
-- **Error de bucle de eventos al arrancar (Moon Confesiones):** el cliente fija su event loop al crearse y un segundo loop rompía el inicio; reutilicé el mismo loop en vez de crear uno nuevo
-- **Límites de recursos en un VPS compartido (Bocchi):** fijé el proceso a un núcleo, limité las descargas simultáneas, añadí espera por usuario, topes de duración y tamaño, y limpieza automática de archivos temporales
-- **Cierre que dejaba cosas abiertas (Bocchi):** si algo fallaba o llegaba un `SystemExit`, no se cerraban el bot, el userbot, las sesiones HTTP ni el scheduler; moví el apagado a un `finally` con pasos independientes
-- **Núcleo fijo que no se adaptaba (Bocchi):** el límite de CPU estaba escrito en el código; ahora se configura con `BOCCHI_CPUS`, con el núcleo 0 como valor por defecto
-- **Quiz que sobrevive a los reinicios (Diosa Moon):** guardo el progreso en MongoDB con fecha de expiración, así nadie pierde el avance cuando el bot se reinicia
-- **Puntos "farmeables" (Diosa Moon):** puse separación mínima entre mensajes, bloqueo temporal ante ráfagas y un tamaño mínimo de grupo para que no se puedan acumular puntos con spam
-- **Caché que vencía a las 19:00 (Vesta):** el servidor está en UTC y la caché de "hoy" expiraba a medianoche UTC; pasé el cálculo a hora de Guayaquil
-- **Cuotas con peticiones simultáneas (Vesta):** el consumo de mensajes usa una actualización atómica en MongoDB con condición, así que no se puede gastar de más con peticiones en paralelo
-- **Mensajes cobrados cuando la IA fallaba (Vesta):** si ningún proveedor responde o el JSON es inválido, se devuelve el uso o la consulta al usuario
-- **Anuncios fáciles de falsear (Vesta):** el premio exige un inicio registrado en el servidor, un tiempo mínimo y máximo viendo el anuncio, y un solo reclamo al día por sección; el postback de Monetag es idempotente
-- **Secreto expuesto en los logs (Vesta):** el access log imprimía el token del postback; escribí un logger propio que lo enmascara
-- **Traducciones bloqueadas (Vesta):** Google Translate bloqueaba la IP del VPS, así que la IA pasó a ser la vía principal, con Google como respaldo y resultado cacheado
-- **Inglés guardado como otro idioma (Vesta):** si la traducción fallaba, el cliente cacheaba el texto en inglés como español o francés; ahora el servidor informa el idioma real y el cliente solo cachea si coincide
-- **Scrapeos duplicados (Vesta):** un lock por clave hace que solo una petición scrapee y las demás esperen a la caché
-- **Respuestas de IA malformadas (Vesta):** extraigo el JSON aunque venga con markdown o texto alrededor y valido tipos, rangos y largos antes de guardarlo
-- **`/start` doble con confesiones (Vesta):** el deep-link de confesiones corta la propagación del mensaje para que no llegue también el `/start` con GIF
-- **Ranking semanal estable (Vesta):** `/topsignos` se genera con una semilla derivada del ámbito y la semana, y se guarda con inserción condicional para evitar carreras
-- **Límite de escrituras de Workers KV (Monitoreo):** consolidé las llaves en un solo objeto JSON y limité las escrituras a una cada 30 minutos por bot, sin importar la frecuencia del latido, para no agotar el tope diario gratuito
-- **Avisos en bucle (Monitoreo):** el mensaje del canal solo se vuelve a fijar cuando cambia el estado de algún bot, y el nuevo estado se guarda antes de tocar el pin para no entrar en un ciclo de fijar y desfijar si KV deja de aceptar escrituras
-- **Bots "vivos" que en realidad se reiniciaban (Monitoreo):** el latido por sí solo no revela un bucle de reinicios, así que añadí un evento de arranque sin límite de frecuencia para verlo
-- **Falsos "muertos" (Monitoreo):** el umbral de 45 minutos equivale a dos latidos perdidos del intervalo más largo más un margen, para que un latido perdido no marque un bot como caído
+## Technical problems I solved
+- **Race conditions in bets (Puchu):** per-user locks to prevent duplicate or double-charged bets from double taps or Telegram retries
+- **Bets that could charge too much or too little (Puchu):** the selector always started at x1 even if the user already had a bet, the balance validation compared against the total instead of the difference when modifying, and switching outcomes lost the previous bet without a refund; it now starts at the real amount, validates the real cost and requires withdrawing before betting on another outcome
+- **Knockout bracket that wouldn't advance (Puchu):** the mapping from round of 16 to quarterfinals, semifinals and final, and from the losers to third place, was missing; winners didn't move on and the bracket stayed on "?"
+- **Unreliable results API (Puchu):** I protected manually loaded status and scorers, prevented the score from going backwards, discarded impossible states (second half before halftime) and added a fallback with a second data source
+- **Goals announced twice (Puchu):** when the manual notice and the API update coincided, the same goal was announced twice; now every goal has an announcement key and the score is compared before notifying
+- **Match times in different timezones (Puchu):** each stadium has its own timezone and the schedule shows the time in several countries
+- **Prizes with no winners (Puchu):** if nobody wins, everyone is refunded and the match is flagged so the history displays it properly
+- **Two users with the same character (Puchu):** a unique index per group and theme prevents it, and if the change fails at the last moment the cost is refunded
+- **Players who "came back to life" in the roulette (Puchu):** an `await` before saving let a late callback overwrite the eliminated state; the state is now computed and saved synchronously
+- **Empty keyboards in Tornado (Puchu):** cells with no text made Telegram fail with "Can't find field text"; they are now skipped and an empty keyboard is never sent
+- **Games stuck by errors (Puchu):** Tragapuchus only released the chat on the happy path; it now does so on any error too, and there is a command to free stuck games and their players' locks
+- **Badge migration without duplicates (Puchu):** when splitting purchasable badges into new identifiers, I wrote an idempotent migration that credits what users already had while respecting the per-user cap
+- **"Change welcome" mode that got stuck (Puchu):** I added a 2-minute expiration so an admin who abandons the panel doesn't leave others unable to edit
+- **Puchutime without flood (Puchu):** I rewrote it with an execution lock, a single notice per group without enough players, and the interval spread according to the number of groups
+- **Group to supergroup migration (Puchu):** on migration, the configuration and player records move to the new identifier
+- **Telegram limits (Puchu):** sends with retry based on `retry_after` and spaced-out edits on live messages to avoid 429s
+- **VPS load (Puchu):** I lowered the rotating backup from every 30 minutes to every 3 hours and stored it outside the folder watched by nodemon
+- **Startup that didn't confirm the connection (Puchu):** Telegraf's `bot.launch()` doesn't resolve until the bot stops; I confirm the connection with `getMe()` and only then start the heartbeat
+- **Shop centralization (Puchu):** a single catalog to eliminate sync errors between menus
+- **Repeated updates after a restart (Akami):** the bot reprocessed old messages; I solved it with a maximum-priority handler and deduplication using in-memory structures
+- **Accidental permanent bans (Akami):** in the antiflood with temporary penalty, if the message was already deleted the bot didn't read the duration and banned forever; it now uses the stored value and has a safe fallback
+- **Corrupted flood counter (Akami):** queued messages from an already muted user wiped other users' progress; it now ignores them with a member cache that is invalidated on sanction
+- **Bulk deletion without reading history (Akami):** bots can't read old messages, so I delete by ID range; if a batch fails because of service messages, I split it in half until the problematic one is isolated, and resume after flood waits
+- **Night mode that self-corrects (Akami):** I compare the schedule by range, so after a restart the group recovers its correct state in under a minute
+- **AI provider outages (Akami):** the chatbot automatically switches to the next provider and rotates keys and models when one fails
+- **Log spam when configuring (Akami):** every click in the panel generated a notice; I added a 5-second debounce to send a single log with the final value
+- **Logs that disappeared (Mephisto Ryu):** a misconfigured logger swallowed all informational messages; I found and fixed it
+- **Inconsistent data in MongoDB (Mephisto Ryu):** I detected that some users were stored with a different identifier type and became invisible to the rest of the bot
+- **Telegram button limit (Mephisto Ryu):** a whole dictionary was serialized into the button data and exceeded the 64-byte limit
+- **Quotes lost on publishing (Moon Confesiones):** copying a message that replied to another lost the quote; I rebuilt the content with a quote block respecting Telegram's character limits, with a fallback if it didn't fit
+- **Event loop error on startup (Moon Confesiones):** the client binds its event loop at creation and a second loop broke startup; I reused the same loop instead of creating a new one
+- **Resource limits on a shared VPS (Bocchi):** I pinned the process to one core, limited simultaneous downloads, added per-user cooldown, duration and size caps, and automatic cleanup of temporary files
+- **Shutdown that left things open (Bocchi):** if something failed or a `SystemExit` arrived, the bot, userbot, HTTP sessions and scheduler weren't closed; I moved the teardown to a `finally` with independent steps
+- **Fixed core that didn't adapt (Bocchi):** the CPU limit was hardcoded; it is now configured with `BOCCHI_CPUS`, with core 0 as the default
+- **Quiz that survives restarts (Diosa Moon):** I store progress in MongoDB with an expiration date, so nobody loses their progress when the bot restarts
+- **"Farmable" points (Diosa Moon):** I added a minimum gap between messages, a temporary block on bursts and a minimum group size so points can't be accumulated through spam
+- **Cache that expired at 19:00 (Vesta):** the server is in UTC and the "today" cache expired at UTC midnight; I moved the calculation to Guayaquil time
+- **Quotas with simultaneous requests (Vesta):** message consumption uses an atomic conditional update in MongoDB, so it can't be overspent with parallel requests
+- **Messages charged when the AI failed (Vesta):** if no provider responds or the JSON is invalid, the usage or the query is returned to the user
+- **Easily faked ads (Vesta):** the reward requires a start registered on the server, a minimum and maximum time watching the ad, and a single claim per day per section; the Monetag postback is idempotent
+- **Secret exposed in logs (Vesta):** the access log printed the postback token; I wrote a custom logger that masks it
+- **Blocked translations (Vesta):** Google Translate blocked the VPS IP, so AI became the primary route, with Google as a fallback and cached results
+- **English saved as another language (Vesta):** if translation failed, the client cached the English text as Spanish or French; the server now reports the real language and the client only caches if it matches
+- **Duplicate scrapes (Vesta):** a per-key lock makes only one request scrape while the others wait for the cache
+- **Malformed AI responses (Vesta):** I extract the JSON even when it comes wrapped in markdown or surrounding text and validate types, ranges and lengths before saving
+- **Double `/start` with confessions (Vesta):** the confessions deep link stops the message from propagating so the `/start` with GIF doesn't arrive too
+- **Stable weekly ranking (Vesta):** `/topsignos` is generated with a seed derived from the scope and the week, and saved with a conditional insert to avoid races
+- **Workers KV write limit (Monitoring):** I consolidated the keys into a single JSON object and limited writes to one every 30 minutes per bot, regardless of heartbeat frequency, to avoid exhausting the free daily cap
+- **Notification loops (Monitoring):** the channel message is only re-pinned when some bot's status changes, and the new status is saved before touching the pin to avoid a pin/unpin cycle if KV stops accepting writes
+- **"Alive" bots that were actually restarting (Monitoring):** the heartbeat alone doesn't reveal a restart loop, so I added a startup event with no rate limit to see it
+- **False "dead" flags (Monitoring):** the 45-minute threshold equals two missed heartbeats of the longest interval plus a margin, so one lost heartbeat doesn't mark a bot as down
 
-## Otros proyectos
-- **[Vorath](https://t.me/Vorath_bot):** biblioteca de juegos retro dentro de Telegram. Bot en Pyrogram (Kurigram) cuyo comando `/arcade` abre, con un botón, una miniapp de Telegram con la biblioteca de juegos; idioma por usuario y por grupo, modo ligero para dispositivos de gama baja, respaldos automáticos y reinicio con actualización desde el propio chat
+## Other projects
+- **[Vorath](https://t.me/Vorath_bot):** retro game library inside Telegram. Pyrogram (Kurigram) bot whose `/arcade` command opens, with a button, a Telegram miniapp with the game library; per-user and per-group language, lightweight mode for low-end devices, automatic backups and restart with update from the chat itself
 
-> Mi código de producción está en repos privados. Si eres reclutador o estás evaluando mi trabajo, escríbeme y te doy acceso de lectura.
+> My production code lives in private repos. If you're a recruiter or evaluating my work, write to me and I'll give you read access.
 
-## Aprendiendo ahora
-Certificación de JavaScript en freeCodeCamp.
+## Currently learning
+JavaScript certification on freeCodeCamp.
 
-## Contacto
+## Contact
 <div align="center">
 
 <a href="https://darkangelbots.dev/"><img src="https://img.shields.io/badge/Web-darkangelbots.dev-6c5ce7?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
