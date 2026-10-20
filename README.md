@@ -113,12 +113,14 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Monitoreo:** heartbeat hacia mi página y comando de estado con latencia, CPU, RAM, disco, memoria del proceso y estado de MongoDB
 
 ## Problemas técnicos que resolví
-- **Condiciones de carrera en apuestas (Puchu):** bloqueos por usuario para evitar apuestas duplicadas y corrección de la lógica de llaves del Mundial
+- **Condiciones de carrera en apuestas (Puchu):** bloqueos por usuario para evitar apuestas duplicadas o cobradas dos veces por doble toque o reintentos de Telegram
 - **Apuestas que podían cobrar de más o de menos (Puchu):** el selector arrancaba siempre en x1 aunque el usuario ya tuviera una apuesta, la validación de saldo comparaba contra el total en vez de la diferencia al modificar y cambiar de resultado hacía perder la apuesta anterior sin reembolso; ahora arranca en la cantidad real, valida el costo real y exige retirar antes de apostar a otro resultado
 - **Cuadro de eliminatorias que no avanzaba (Puchu):** faltaba el mapeo de octavos a cuartos, semifinales y final, y de los perdedores al tercer puesto; los ganadores no pasaban de ronda y el cuadro se quedaba en "?"
 - **API de resultados poco confiable (Puchu):** protegí el estado y los goleadores cargados a mano, evité que el marcador retroceda, descarté estados imposibles (segundo tiempo antes de tiempo) y añadí un respaldo con una segunda fuente de datos
+- **Goles anunciados dos veces (Puchu):** cuando coincidían el aviso manual y la actualización de la API se anunciaba el mismo gol dos veces; ahora cada gol tiene una clave de anuncio y se compara el marcador antes de avisar
 - **Horarios de partidos en zonas distintas (Puchu):** cada estadio tiene su propio huso horario y el calendario muestra la hora en varios países
 - **Premios sin ganadores (Puchu):** si nadie acierta se reembolsa a todos y el partido queda marcado para que el historial lo muestre bien
+- **Dos usuarios con el mismo personaje (Puchu):** un índice único por grupo y temática lo impide, y si el cambio falla en el último instante se reembolsa el costo
 - **Jugadores que "resucitaban" en la ruleta (Puchu):** un `await` antes de guardar permitía que un callback tardío pisara el estado de eliminado; ahora el estado se calcula y se guarda de forma síncrona
 - **Teclados vacíos en Tornado (Puchu):** celdas sin texto hacían fallar a Telegram con "Can't find field text"; ahora se omiten y no se envía un teclado vacío
 - **Partidas trabadas por errores (Puchu):** Tragapuchus solo liberaba el chat en el flujo feliz; ahora lo hace también ante cualquier error, y hay un comando para liberar partidas colgadas y los bloqueos de sus jugadores
@@ -160,7 +162,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 - **Ranking semanal estable (Vesta):** `/topsignos` se genera con una semilla derivada del ámbito y la semana, y se guarda con inserción condicional para evitar carreras
 
 ## Otros proyectos
-| [Vorath](https://t.me/Vorath_bot) | Biblioteca de juegos retro dentro de Telegram | Bot en Pyrogram (Kurigram) cuyo comando `/arcade` abre, con un botón, una miniapp de Telegram con la biblioteca de juegos; idioma por usuario y por grupo, modo ligero para dispositivos de gama baja, respaldos automáticos y reinicio con actualización desde el propio chat |
+- **[Vorath](https://t.me/Vorath_bot):** biblioteca de juegos retro dentro de Telegram. Bot en Pyrogram (Kurigram) cuyo comando `/arcade` abre, con un botón, una miniapp de Telegram con la biblioteca de juegos; idioma por usuario y por grupo, modo ligero para dispositivos de gama baja, respaldos automáticos y reinicio con actualización desde el propio chat
 
 > Mi código de producción está en repos privados. Si eres reclutador o estás evaluando mi trabajo, escríbeme y te doy acceso de lectura.
 
