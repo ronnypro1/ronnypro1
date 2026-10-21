@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=Ronny&fontSize=60" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6c5ce7,100:26A5E4&height=180&section=header&text=Ronny&fontSize=60&fontColor=ffffff&animation=fadeIn" />
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&center=true&width=500&lines=Backend+developer;Telegram+bots+in+production;Node.js+%26+Python" />
 
@@ -49,6 +49,20 @@ A network of Telegram bots covering moderation, music, games and social interact
 - **Migration from MongoDB Atlas to a self-hosted server** and a separate API on a private network (Mephisto Ryu)
 
 📄 **[Full technical details and solved problems →](PROYECTOS.en.md)**
+
+<div align="center">
+
+<a href="https://darkangelbots.dev/estado"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdarkangelbots.dev%2Fstatus.json&query=%24.activos&label=Active%20bots&color=2ecc71&style=for-the-badge&logo=statuspage&logoColor=white" /></a>
+
+<br><br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ronnypro1/ronnypro1/output/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ronnypro1/ronnypro1/output/snake.svg" />
+  <img alt="Animated contribution graph" src="https://raw.githubusercontent.com/ronnypro1/ronnypro1/output/snake.svg" />
+</picture>
+
+</div>
 
 > My production code lives in private repositories. If you are a recruiter or evaluating my work, message me and I will give you read access.
 
