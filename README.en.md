@@ -48,7 +48,7 @@ A network of Telegram bots covering moderation, music, games and social interact
 - **AI with fallback:** provider chain with key rotation and automatic failover when one goes down
 - **Migration from MongoDB Atlas to a self-hosted server** and a separate API on a private network (Mephisto Ryu)
 
-📄 **[Full technical details and solved problems →](PROYECTOS.md)** *(in Spanish)*
+📄 **[Full technical details and solved problems →](PROYECTOS.en.md)**
 
 > My production code lives in private repositories. If you are a recruiter or evaluating my work, message me and I will give you read access.
 
