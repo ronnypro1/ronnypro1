@@ -33,7 +33,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 | [Sayomi Whisper](https://t.me/SayomiXwhisperbot) | Mensajes susurrados y privacidad | Arquitectura por plugins (modo inline, privacidad, estadísticas), español e inglés, y reporte de estado a mi página | [Docs](https://darkangelbots.dev/sayomi/sayomi) |
 | [Diosa Moon](https://t.me/Diosamoonbot) | Comunidad con juegos, progreso y cumpleaños | Sistema de linajes con quiz, puntos y rankings; cumpleaños por zona horaria; juegos con temporizadores asíncronos; multilenguaje y reanudación de tareas tras reinicios | [Docs](https://darkangelbots.dev/diosamoon/diosamoon) |
 | [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Confesiones anónimas de cara al público, con moderación | Flujo de aprobación en un grupo de admins, publicación de texto y multimedia en un canal con soporte de citas, bloqueo de usuarios, donaciones con Telegram Stars y respaldos diarios | [Docs](https://darkangelbots.dev/moonconfesiones/moonconfesiones) |
-| [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Juego de rol con economía y rituales | Economía con monedas, familiares y recompensas por anuncios; migración de MongoDB Atlas a un servidor propio | [Docs](https://darkangelbots.dev/mephisto/mephisto) |
+| [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Juego de rol con economía y rituales | Economía con monedas y fichas, colección de personajes con miniapp, banco, chatbot con IA, más de 20 juegos multijugador, parejas y familia con certificados, API propia en un servidor aparte y migración de MongoDB Atlas a un servidor propio (ver abajo) | [Docs](https://darkangelbots.dev/mephisto/mephisto) |
 | [Vesta](https://t.me/Orusvesta_bot) | Horóscopo diario y carta natal | Miniapp de Telegram en 4 idiomas con horóscopo diario, semanal y mensual, compatibilidad, perfil astral y carta natal con cálculo astronómico propio; astrólogo con IA con cuotas diarias validadas en el servidor; confesiones anónimas y comandos de signos en el bot | — |
 | [Puchu](https://t.me/Puchuflusbot) | Juegos y economía (código recibido; lo mantengo y desarrollo) | Juegos multijugador por turnos en grupos, economía con tienda, regalos e insignias, rankings con medallas, apuestas del Mundial 2026 con cuadro de eliminatorias, sistema de temáticas, difusiones masivas, respaldos y comando de estado con métricas del servidor (ver abajo) | [Docs](https://darkangelbots.dev/puchu/puchu) |
 
@@ -95,6 +95,28 @@ Los bots reportan a un sistema de monitoreo propio que corre en Cloudflare (Work
 - **Cumpleaños** con zona horaria por usuario, avisos al grupo y en privado sin duplicados
 - **Comunidad:** bienvenidas con aprobación de solicitudes, AFK, frases con panel por grupo y calendario lunar
 - **Operación:** respaldos automáticos y latido periódico para detectar reinicios en bucle
+
+## Qué incluye Mephisto Ryu
+- **Husbandos (colección de personajes):** un personaje aparece en los grupos y gana quien lo adivina primero. Tiene 6 rarezas, nivel de coleccionista, sobres, mercado entre usuarios con comisión, tienda cósmica de ediciones numeradas y una miniapp para gestionarlo todo
+- **Economía:** monedas y fichas, un banco de 7 niveles con impuestos, préstamos entre usuarios y plazos fijos, y anuncios recompensados con reclamo atómico
+- **Más de 20 juegos multijugador:** bingo, UNO, blackjack, minas royale, cacería, barco, campamento, trivia BL, sopa de palabras, ajedrez y damas, entre otros. Tienen lobby, apuesta con pozo y varios usan miniapp
+- **Parejas y familia:** matrimonio y divorcio por frases en vez de comandos, adopción y certificados que acumulan monedas y se reparten cada mes, todo dentro de transacciones
+- **Chatbot con IA:** personaje con 18 rasgos de estado emocional por usuario y por chat, cuatro proveedores de modelos con rotación de claves, voz y comprensión de fotos, audios, stickers y videos
+- **Miniapps web:** Husbandos, Confesiones, Shadow Chat (chat anónimo uno a uno), Chibi (mascota virtual), Bingo, UNO, Sopa de palabras y Wall Rush
+- **Perfil BL:** tarjeta animada dibujada con Pillow, en MP4 o GIF, con rangos Omegaverse y Guideverse
+- **Interacción:** más de 70 comandos agrupados en un arsenal, compatibilidad por signo, pareja del día, rankings por categoría y perfil con varias páginas
+- **Contenido editable desde Telegram:** manhwas, personajes y fotos viven en Mongo y se editan con `/data_bl`, con recarga en caliente y respaldo propio
+- **Operación:** textos por idioma, respaldos cada 30 minutos, heartbeat con evento de arranque y difusiones que se reanudan tras un reinicio
+
+> Documentación completa en [darkangelbots.dev/mephisto/mephisto](https://darkangelbots.dev/mephisto/mephisto).
+
+## Arquitectura de Mephisto Ryu
+- **Dos servidores en una misma red privada:** el bot corre en polling en uno, sin exponerse, y la API pública en otro. Cuando una miniapp necesita mandar un mensaje, la API se lo pide al bot por una ruta interna
+- **API unificada con FastAPI y uvicorn:** un solo proceso sirve todas las miniapps, con verificación HMAC del `initData` firmado de Telegram y un proxy de imágenes para que el token del bot nunca llegue al navegador
+- **MongoDB (Motor) compartido** por el bot y la API, con transacciones en los cambios que tocan a dos personas a la vez
+- **Datos del juego fuera del código:** la economía vive en un solo archivo recargable en caliente y, si Mongo falla al arrancar, el juego usa el último snapshot guardado en disco
+- **Coordinador central de partidas:** un solo juego por chat y un jugador en una sola partida, sin tocar cada plugin
+- **Partidas que sobreviven a un reinicio:** el estado de la mayoría de los juegos se guarda en Mongo y se retoma al arrancar
 
 ## Qué incluye Vesta
 - **Miniapp de horóscopo:** hoy, semana y mes para los 12 signos en español, inglés, italiano y francés, con fondo animado y modo ligero que se activa solo en dispositivos de gama baja
@@ -160,6 +182,16 @@ Los bots reportan a un sistema de monitoreo propio que corre en Cloudflare (Work
 - **Logs que desaparecían (Mephisto Ryu):** un logger mal configurado tragaba todos los mensajes informativos; lo encontré y arreglé
 - **Datos inconsistentes en MongoDB (Mephisto Ryu):** detecté que algunos usuarios se guardaban con otro tipo de identificador y quedaban invisibles para el resto del bot
 - **Límite de Telegram en botones (Mephisto Ryu):** un diccionario completo se serializaba dentro de los datos del botón y superaba el límite de 64 bytes
+- **Anuncios cobrados dos veces (Mephisto Ryu):** el reclamo es una actualización atómica en Mongo que solo prospera si ya pasó el enfriamiento, así que un doble toque o dos pestañas no acreditan la misma vista dos veces
+- **Chat de origen falsificable desde la miniapp (Mephisto Ryu):** el chat se deduce de los campos firmados del `initData` y no de lo que el navegador mande en el cuerpo de la petición
+- **Parejas a medias (Mephisto Ryu):** casar y divorciar eran dos actualizaciones sueltas, así que un reinicio entre ambas dejaba a uno casado y al otro no; ahora van en una transacción, y el reparto del certificado entra en la misma
+- **Mensajes duplicados en el chat anónimo (Mephisto Ryu):** un nonce por mensaje con vida de 30 segundos descarta los reintentos, un candado por destinatario ordena la entrega y un buffer en RAM evita esperar a Mongo
+- **Cierre del navegador en UNO (Mephisto Ryu):** el proxy reescala las fotos al ancho que pide la página y las cachea en memoria y en disco, y el catálogo que recibe la página bajó de unos 10 MB a unos 1,6 MB
+- **Datos del juego atados al código (Mephisto Ryu):** moví manhwas, personajes y fotos de un archivo a Mongo con una migración que nunca borra ni pisa, que se puede repetir sin duplicar y que compara el juego de hoy contra lo que armaría solo con Mongo antes de cambiar de fuente
+- **Dos juegos pisándose en el mismo chat (Mephisto Ryu):** una guardia central bloquea cualquier arranque si ya hay una partida, y resolví un import circular con el blackjack cargándolo en tiempo de ejecución
+- **Reembolsos al salir del lobby (Mephisto Ryu):** cada juego cobra en un momento distinto, así que la devolución usa una marca de "pagado" que se baja al devolver y evita devolverla dos veces
+- **Apodos pagados con Stars que se perdían al reiniciar (Mephisto Ryu):** el pedido pendiente se guarda también en Mongo y el tipo de flujo viaja en el propio pago, y si no se encuentra, el pago no se pierde en silencio sino que se deriva al staff
+- **Miniapp en equipos de gama baja (Mephisto Ryu):** el Bingo detecta el nivel del dispositivo y la calidad de la red, usando la clasificación que Telegram manda en el User-Agent, y reacciona a un cambio de red en caliente
 - **Citas que se perdían al publicar (Moon Confesiones):** al copiar un mensaje que respondía a otro se perdía la cita; reconstruí el contenido con un bloque de cita respetando los límites de caracteres de Telegram, con un respaldo si no cabía
 - **Error de bucle de eventos al arrancar (Moon Confesiones):** el cliente fija su event loop al crearse y un segundo loop rompía el inicio; reutilicé el mismo loop en vez de crear uno nuevo
 - **Límites de recursos en un VPS compartido (Bocchi):** fijé el proceso a un núcleo, limité las descargas simultáneas, añadí espera por usuario, topes de duración y tamaño, y limpieza automática de archivos temporales
