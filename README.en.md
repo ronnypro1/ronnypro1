@@ -33,7 +33,7 @@ A network of Telegram bots for moderation, music, games and social interaction. 
 | [Sayomi Whisper](https://t.me/SayomiXwhisperbot) | Whispered messages and privacy | Plugin-based architecture (inline mode, privacy, statistics), Spanish and English, and status reporting to my website | [Docs](https://darkangelbots.dev/sayomi/sayomi) |
 | [Diosa Moon](https://t.me/Diosamoonbot) | Community with games, progression and birthdays | Lineage system with quiz, points and rankings; timezone-aware birthdays; games with asynchronous timers; multilanguage and task resumption after restarts | [Docs](https://darkangelbots.dev/diosamoon/diosamoon) |
 | [Moon Confesiones](https://t.me/MoonConfesiones_bot) | Public-facing anonymous confessions with moderation | Approval flow in an admin group, text and media publishing to a channel with quote support, user blocking, Telegram Stars donations and daily backups | [Docs](https://darkangelbots.dev/moonconfesiones/moonconfesiones) |
-| [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Role-playing game with economy and rituals | Economy with coins, familiars and rewards for watching ads; migration from MongoDB Atlas to a self-hosted server | [Docs](https://darkangelbots.dev/mephisto/mephisto) |
+| [Mephisto Ryu](https://t.me/MephistoRyu_Bot) | Role-playing game with economy and rituals | Economy with coins and tokens, character collection with a miniapp, bank, AI chatbot, more than 20 multiplayer games, couples and family with certificates, a custom API on a separate server and migration from MongoDB Atlas to a self-hosted server (see below) | [Docs](https://darkangelbots.dev/mephisto/mephisto) |
 | [Vesta](https://t.me/Orusvesta_bot) | Daily horoscope and natal chart | 4-language Telegram miniapp with daily, weekly and monthly horoscopes, compatibility, astral profile and natal chart with custom astronomical calculation; AI astrologer with server-validated daily quotas; anonymous confessions and zodiac sign commands in the bot | — |
 | [Puchu](https://t.me/Puchuflusbot) | Games and economy (inherited code; I maintain and develop it) | Turn-based multiplayer games in groups, economy with shop, gifts and badges, rankings with medals, World Cup 2026 betting with a knockout bracket, theme system, mass broadcasts, backups and a status command with server metrics (see below) | [Docs](https://darkangelbots.dev/puchu/puchu) |
 
@@ -95,6 +95,28 @@ The bots report to a custom monitoring system running on Cloudflare (Workers, KV
 - **Birthdays** with per-user timezone, group and private notifications without duplicates
 - **Community:** welcomes with join request approval, AFK, quotes with a per-group panel and a lunar calendar
 - **Operations:** automatic backups and periodic heartbeat to detect restart loops
+
+## What Mephisto Ryu includes
+- **Husbandos (character collection):** a character appears in groups and whoever guesses it first wins it. It has 6 rarities, a collector level, packs, a user-to-user market with a fee, a cosmic shop with numbered editions and a miniapp to manage it all
+- **Economy:** coins and tokens, a 7-level bank with taxes, loans between users and fixed-term deposits, and rewarded ads with atomic claims
+- **More than 20 multiplayer games:** bingo, UNO, blackjack, mine royale, hunt, ship, camp, BL trivia, word search, chess and checkers, among others. They have a lobby, a bet with a prize pool and several use a miniapp
+- **Couples and family:** marriage and divorce by phrases instead of commands, adoption and certificates that accumulate coins and are shared out every month, all inside transactions
+- **AI chatbot:** a character with 18 emotional state traits per user and per chat, four model providers with key rotation, voice and understanding of photos, audio, stickers and videos
+- **Web miniapps:** Husbandos, Confessions, Shadow Chat (one-to-one anonymous chat), Chibi (virtual pet), Bingo, UNO, Word Search and Wall Rush
+- **BL profile:** an animated card drawn with Pillow, as MP4 or GIF, with Omegaverse and Guideverse ranks
+- **Interaction:** more than 70 commands grouped into an arsenal, sign compatibility, couple of the day, rankings by category and a multi-page profile
+- **Content editable from Telegram:** manhwas, characters and photos live in Mongo and are edited with `/data_bl`, with hot reload and their own backup
+- **Operations:** per-language texts, backups every 30 minutes, heartbeat with a startup event and broadcasts that resume after a restart
+
+> Full documentation at [darkangelbots.dev/mephisto/mephisto](https://darkangelbots.dev/mephisto/mephisto).
+
+## Mephisto Ryu's architecture
+- **Two servers on the same private network:** the bot runs on polling on one, never exposed, and the public API on the other. When a miniapp needs to send a message, the API asks the bot to do it through an internal route
+- **Unified API with FastAPI and uvicorn:** a single process serves every miniapp, with HMAC verification of Telegram's signed `initData` and an image proxy so the bot token never reaches the browser
+- **Shared MongoDB (Motor)** for the bot and the API, with transactions on changes that touch two people at once
+- **Game data outside the code:** the economy lives in a single file that reloads hot and, if Mongo fails at startup, the game uses the last snapshot saved to disk
+- **Central game coordinator:** a single game per chat and a player in only one game, without touching every plugin
+- **Games that survive a restart:** the state of most games is saved in Mongo and resumed on startup
 
 ## What Vesta includes
 - **Horoscope miniapp:** today, week and month for all 12 signs in Spanish, English, Italian and French, with an animated background and a lightweight mode that activates automatically on low-end devices
@@ -160,6 +182,16 @@ The bots report to a custom monitoring system running on Cloudflare (Workers, KV
 - **Logs that disappeared (Mephisto Ryu):** a misconfigured logger swallowed all informational messages; I found and fixed it
 - **Inconsistent data in MongoDB (Mephisto Ryu):** I detected that some users were stored with a different identifier type and became invisible to the rest of the bot
 - **Telegram button limit (Mephisto Ryu):** a whole dictionary was serialized into the button data and exceeded the 64-byte limit
+- **Ads paid twice (Mephisto Ryu):** the claim is an atomic Mongo update that only succeeds if the cooldown has passed, so a double tap or two tabs can't credit the same view twice
+- **Origin chat forgeable from the miniapp (Mephisto Ryu):** the chat is derived from the signed fields of the `initData`, not from whatever the browser sends in the request body
+- **Half-made couples (Mephisto Ryu):** marrying and divorcing were two loose updates, so a restart between them left one person married and the other not; now they run in one transaction, and the certificate split goes in the same one
+- **Duplicate messages in the anonymous chat (Mephisto Ryu):** a per-message nonce with a 30-second life drops retries, a per-recipient lock orders delivery and a RAM buffer avoids waiting on Mongo
+- **Browser crash in UNO (Mephisto Ryu):** the proxy rescales photos to the width the page asks for and caches them in memory and on disk, and the catalog the page receives dropped from about 10 MB to about 1.6 MB
+- **Game data tied to the code (Mephisto Ryu):** I moved manhwas, characters and photos from a file to Mongo with a migration that never deletes or overwrites, can be repeated without duplicating and compares today's game against what it would build from Mongo alone before switching source
+- **Two games stepping on each other in the same chat (Mephisto Ryu):** a central guard blocks any start if a game is already running, and I solved a circular import by loading blackjack at runtime
+- **Refunds when leaving a lobby (Mephisto Ryu):** each game charges at a different moment, so the refund uses a "paid" flag that is lowered on return to avoid refunding twice
+- **Nicknames paid with Stars lost on restart (Mephisto Ryu):** the pending order is also saved in Mongo and the flow type travels in the payment itself, and if it can't be found, the payment isn't silently lost but routed to staff
+- **Miniapp on low-end devices (Mephisto Ryu):** Bingo detects the device tier and network quality, using the classification Telegram sends in the User-Agent, and reacts to a network change on the fly
 - **Quotes lost on publishing (Moon Confesiones):** copying a message that replied to another lost the quote; I rebuilt the content with a quote block respecting Telegram's character limits, with a fallback if it didn't fit
 - **Event loop error on startup (Moon Confesiones):** the client binds its event loop at creation and a second loop broke startup; I reused the same loop instead of creating a new one
 - **Resource limits on a shared VPS (Bocchi):** I pinned the process to one core, limited simultaneous downloads, added per-user cooldown, duration and size caps, and automatic cleanup of temporary files
