@@ -1,5 +1,7 @@
 # Detalle técnico de mis proyectos
 
+**🌐 Idioma:** Español · [English](PROYECTOS.en.md)
+
 [← Volver al perfil](README.md)
 
 Qué incluye cada bot, cómo está armado y qué problemas reales resolví. Mi código de producción está en repos privados; si quieres revisarlo, escríbeme a [@darkangeldev](https://t.me/darkangeldev) y te doy acceso de lectura.
