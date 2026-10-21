@@ -54,8 +54,6 @@ A network of Telegram bots covering moderation, music, games and social interact
 
 <a href="https://darkangelbots.dev/estado"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdarkangelbots.dev%2Fstatus.json&query=%24.activos&label=Active%20bots&color=2ecc71&style=for-the-badge&logo=statuspage&logoColor=white" /></a>
 
-<br><br>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ronnypro1/ronnypro1/output/snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ronnypro1/ronnypro1/output/snake.svg" />
