@@ -125,7 +125,7 @@ Role-play game with an economy and rituals. [Documentation](https://darkangelbot
 ---
 
 ## Vesta
-Daily horoscope and birth chart in a Telegram mini app.
+Daily horoscope and birth chart in a Telegram mini app. [Documentation](https://darkangelbots.dev/vesta/vesta)
 
 ### What it includes
 - **Horoscope mini app:** today, week and month for the 12 signs in Spanish, English, Italian and French, with an animated background and a lightweight mode that activates automatically on low-end devices
