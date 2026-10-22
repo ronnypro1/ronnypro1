@@ -34,7 +34,7 @@ A network of Telegram bots covering moderation, music, games and social interact
 | [Diosa Moon](https://t.me/Diosamoonbot) · [Docs](https://darkangelbots.dev/diosamoon/diosamoon) | Community with games and birthdays | Quiz-based lineages with rankings, per-timezone birthdays, games that resume after restarts |
 | [Moon Confesiones](https://t.me/MoonConfesiones_bot) · [Docs](https://darkangelbots.dev/moonconfesiones/moonconfesiones) | Anonymous confessions with moderation | Admin approval flow, media with quote support, Telegram Stars donations, daily backups |
 | [Mephisto Ryu](https://t.me/MephistoRyu_Bot) · [Docs](https://darkangelbots.dev/mephisto/mephisto) | Role-play game with an economy | Economy, 20+ multiplayer games, mini apps, a custom API on a separate server, migration from MongoDB Atlas to a self-hosted server |
-| [Vesta](https://t.me/Orusvesta_bot) | Daily horoscope and birth chart | 4-language mini app, birth chart with custom astronomical calculations, AI astrologer with server-validated quotas |
+| [Vesta](https://t.me/Orusvesta_bot) · [Docs](https://darkangelbots.dev/vesta/vesta) | Daily horoscope and birth chart | 4-language mini app, birth chart with custom astronomical calculations, AI astrologer with server-validated quotas |
 | [Puchu](https://t.me/Puchuflusbot) · [Docs](https://darkangelbots.dev/puchu/puchu) | Games and economy | Inherited codebase that I maintain and develop: turn-based games, shop, rankings and World Cup 2026 betting |
 | [Vorath](https://t.me/Vorath_bot) | Retro game library | Telegram mini app opened with `/arcade`, lightweight mode for low-end devices, backups and in-chat updates |
 
