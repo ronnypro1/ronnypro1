@@ -125,7 +125,7 @@ Juego de rol con economía y rituales. [Documentación](https://darkangelbots.de
 ---
 
 ## Vesta
-Horóscopo diario y carta natal en una miniapp de Telegram.
+Horóscopo diario y carta natal en una miniapp de Telegram. [Documentación](https://darkangelbots.dev/vesta/vesta)
 
 ### Qué incluye
 - **Miniapp de horóscopo:** hoy, semana y mes para los 12 signos en español, inglés, italiano y francés, con fondo animado y modo ligero que se activa solo en dispositivos de gama baja
