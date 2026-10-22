@@ -34,7 +34,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 | [Diosa Moon](https://t.me/Diosamoonbot) · [Docs](https://darkangelbots.dev/diosamoon/diosamoon) | Comunidad con juegos y cumpleaños | Linajes con quiz y rankings, cumpleaños por zona horaria, juegos que se reanudan tras reinicios |
 | [Moon Confesiones](https://t.me/MoonConfesiones_bot) · [Docs](https://darkangelbots.dev/moonconfesiones/moonconfesiones) | Confesiones anónimas con moderación | Aprobación por admins, multimedia con citas, donaciones con Telegram Stars, respaldos diarios |
 | [Mephisto Ryu](https://t.me/MephistoRyu_Bot) · [Docs](https://darkangelbots.dev/mephisto/mephisto) | Juego de rol con economía | Economía, +20 juegos multijugador, miniapps, API propia en servidor aparte, migración de MongoDB Atlas a servidor propio |
-| [Vesta](https://t.me/Orusvesta_bot) | Horóscopo diario y carta natal | Miniapp en 4 idiomas, carta natal con cálculo astronómico propio, astrólogo con IA con cuotas validadas en el servidor |
+| [Vesta](https://t.me/Orusvesta_bot) · [Docs](https://darkangelbots.dev/vesta/vesta) | Horóscopo diario y carta natal | Miniapp en 4 idiomas, carta natal con cálculo astronómico propio, astrólogo con IA con cuotas validadas en el servidor |
 | [Puchu](https://t.me/Puchuflusbot) · [Docs](https://darkangelbots.dev/puchu/puchu) | Juegos y economía | Código recibido; lo mantengo y desarrollo: juegos por turnos, tienda, rankings y apuestas del Mundial 2026 |
 | [Vorath](https://t.me/Vorath_bot) | Biblioteca de juegos retro | Miniapp de Telegram con `/arcade`, modo ligero para gama baja, respaldos y actualización desde el chat |
 
