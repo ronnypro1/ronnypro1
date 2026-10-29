@@ -65,7 +65,9 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 > Mi código de producción está en repos privados. Si eres reclutador o estás evaluando mi trabajo, escríbeme y te doy acceso de lectura.
 
 ## Certificaciones
-- [Certificación de JavaScript](https://www.freecodecamp.org/espanol/certification/rn_ny/javascript-v9), freeCodeCamp (octubre de 2026, unas 300 horas)
+<a href="https://www.freecodecamp.org/espanol/certification/rn_ny/javascript-v9">
+  <img src="https://img.shields.io/badge/freeCodeCamp-JavaScript-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de JavaScript en freeCodeCamp" />
+</a>
 
 ## Contacto
 <div align="center">
