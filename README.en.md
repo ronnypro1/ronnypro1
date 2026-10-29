@@ -64,8 +64,8 @@ A network of Telegram bots covering moderation, music, games and social interact
 
 > My production code lives in private repositories. If you are a recruiter or evaluating my work, message me and I will give you read access.
 
-## Currently learning
-JavaScript certification on freeCodeCamp.
+## Certifications
+- [JavaScript Certification](https://www.freecodecamp.org/certification/rn_ny/javascript-v9), freeCodeCamp (October 2026, approx. 300 hours)
 
 ## Contact
 <div align="center">
