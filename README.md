@@ -12,8 +12,6 @@
 
 Backend developer autodidacta en Guayaquil, Ecuador. Programo, despliego y mantengo bots de Telegram en producción: desde el código hasta el servidor.
 
-> 💼 **Disponible para trabajo remoto** · Python / Node.js · [@darkangeldev](https://t.me/darkangeldev) · [contacto@darkangelbots.dev](mailto:contacto@darkangelbots.dev)
-
 ## Stack
 - **Python:** Pyrogram, Kurigram, Telethon, PyTgCalls
 - **Node.js:** Telegraf
