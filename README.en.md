@@ -12,8 +12,6 @@
 
 Self-taught backend developer based in Guayaquil, Ecuador. I build, deploy and maintain Telegram bots in production: from the code to the server.
 
-> 💼 **Available for remote work** · Python / Node.js · [@darkangeldev](https://t.me/darkangeldev) · [contacto@darkangelbots.dev](mailto:contacto@darkangelbots.dev)
-
 ## Stack
 - **Python:** Pyrogram, Kurigram, Telethon, PyTgCalls
 - **Node.js:** Telegraf
