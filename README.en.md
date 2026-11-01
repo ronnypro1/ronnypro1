@@ -66,6 +66,9 @@ A network of Telegram bots covering moderation, music, games and social interact
 <a href="https://www.freecodecamp.org/certification/rn_ny/javascript-v9">
   <img src="https://img.shields.io/badge/freeCodeCamp-JavaScript-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="JavaScript Certification from freeCodeCamp" />
 </a>
+<a href="https://www.freecodecamp.org/certification/rn_ny/relational-databases-v9">
+  <img src="https://img.shields.io/badge/freeCodeCamp-Relational%20Database-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Relational Database Certification from freeCodeCamp" />
+</a>
 
 ## Contact
 <div align="center">
