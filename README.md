@@ -72,6 +72,9 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 <a href="https://www.freecodecamp.org/espanol/certification/rn_ny/back-end-development-and-apis-v9">
   <img src="https://img.shields.io/badge/freeCodeCamp-Desarrollo%20Back--end%20y%20APIs-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de Desarrollo back-end y APIs en freeCodeCamp" />
 </a>
+<a href="https://www.freecodecamp.org/espanol/certification/rn_ny/python-v9">
+  <img src="https://img.shields.io/badge/freeCodeCamp-Python-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de Python en freeCodeCamp" />
+</a>
 
 ## Contacto
 <div align="center">
