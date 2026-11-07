@@ -64,25 +64,30 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
 
 ## Certificaciones
 <p>
+  <a href="https://www.freecodecamp.org/espanol/certification/rn_ny/responsive-web-design-v9">
+    <img src="https://img.shields.io/badge/freeCodeCamp-Dise%C3%B1o%20Web%20Adaptable-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de Diseño web adaptable en freeCodeCamp" />
+  </a>
   <a href="https://www.freecodecamp.org/espanol/certification/rn_ny/javascript-v9">
     <img src="https://img.shields.io/badge/freeCodeCamp-JavaScript-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de JavaScript en freeCodeCamp" />
   </a>
+</p>
+<p>
   <a href="https://www.freecodecamp.org/espanol/certification/rn_ny/relational-databases-v9">
     <img src="https://img.shields.io/badge/freeCodeCamp-Bases%20de%20Datos%20Relacionales-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de Bases de Datos Relacionales en freeCodeCamp" />
   </a>
-</p>
-<p>
   <a href="https://www.freecodecamp.org/espanol/certification/rn_ny/back-end-development-and-apis-v9">
     <img src="https://img.shields.io/badge/freeCodeCamp-Desarrollo%20Back--end%20y%20APIs-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de Desarrollo back-end y APIs en freeCodeCamp" />
   </a>
+</p>
+<p>
   <a href="https://www.freecodecamp.org/espanol/certification/rn_ny/python-v9">
     <img src="https://img.shields.io/badge/freeCodeCamp-Python-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de Python en freeCodeCamp" />
   </a>
-</p>
-<p>
   <a href="https://www.freecodecamp.org/espanol/certification/rn_ny/front-end-development-libraries-v9">
     <img src="https://img.shields.io/badge/freeCodeCamp-Bibliotecas%20Front--end-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de Bibliotecas de desarrollo front-end en freeCodeCamp" />
   </a>
+</p>
+<p>
   <a href="https://www.freecodecamp.org/espanol/certification/rn_ny/foundational-c-sharp-with-microsoft">
     <img src="https://img.shields.io/badge/freeCodeCamp-Fundamentos%20de%20C%23%20con%20Microsoft-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de Fundamentos de C# con Microsoft en freeCodeCamp" />
   </a>
