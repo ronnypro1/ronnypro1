@@ -75,6 +75,12 @@ A network of Telegram bots covering moderation, music, games and social interact
 <a href="https://www.freecodecamp.org/certification/rn_ny/python-v9">
   <img src="https://img.shields.io/badge/freeCodeCamp-Python-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Python Certification from freeCodeCamp" />
 </a>
+<a href="https://www.freecodecamp.org/certification/rn_ny/front-end-development-libraries-v9">
+  <img src="https://img.shields.io/badge/freeCodeCamp-Front%20End%20Libraries-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Front End Development Libraries Certification from freeCodeCamp" />
+</a>
+<a href="https://www.freecodecamp.org/certification/rn_ny/foundational-c-sharp-with-microsoft">
+  <img src="https://img.shields.io/badge/freeCodeCamp-Foundational%20C%23%20with%20Microsoft-0a0a23?style=for-the-badge&logo=csharp&logoColor=white" alt="Foundational C# with Microsoft Certification from freeCodeCamp" />
+</a>
 
 ## Contact
 <div align="center">
