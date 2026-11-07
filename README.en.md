@@ -63,24 +63,30 @@ A network of Telegram bots covering moderation, music, games and social interact
 > My production code lives in private repositories. If you are a recruiter or evaluating my work, message me and I will give you read access.
 
 ## Certifications
-<a href="https://www.freecodecamp.org/certification/rn_ny/javascript-v9">
-  <img src="https://img.shields.io/badge/freeCodeCamp-JavaScript-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="JavaScript Certification from freeCodeCamp" />
-</a>
-<a href="https://www.freecodecamp.org/certification/rn_ny/relational-databases-v9">
-  <img src="https://img.shields.io/badge/freeCodeCamp-Relational%20Database-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Relational Database Certification from freeCodeCamp" />
-</a>
-<a href="https://www.freecodecamp.org/certification/rn_ny/back-end-development-and-apis-v9">
-  <img src="https://img.shields.io/badge/freeCodeCamp-Back%20End%20Development%20and%20APIs-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Back End Development and APIs Certification from freeCodeCamp" />
-</a>
-<a href="https://www.freecodecamp.org/certification/rn_ny/python-v9">
-  <img src="https://img.shields.io/badge/freeCodeCamp-Python-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Python Certification from freeCodeCamp" />
-</a>
-<a href="https://www.freecodecamp.org/certification/rn_ny/front-end-development-libraries-v9">
-  <img src="https://img.shields.io/badge/freeCodeCamp-Front%20End%20Libraries-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Front End Development Libraries Certification from freeCodeCamp" />
-</a>
-<a href="https://www.freecodecamp.org/certification/rn_ny/foundational-c-sharp-with-microsoft">
-  <img src="https://img.shields.io/badge/freeCodeCamp-Foundational%20C%23%20with%20Microsoft-0a0a23?style=for-the-badge&logo=csharp&logoColor=white" alt="Foundational C# with Microsoft Certification from freeCodeCamp" />
-</a>
+<p>
+  <a href="https://www.freecodecamp.org/certification/rn_ny/javascript-v9">
+    <img src="https://img.shields.io/badge/freeCodeCamp-JavaScript-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="JavaScript Certification from freeCodeCamp" />
+  </a>
+  <a href="https://www.freecodecamp.org/certification/rn_ny/relational-databases-v9">
+    <img src="https://img.shields.io/badge/freeCodeCamp-Relational%20Database-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Relational Database Certification from freeCodeCamp" />
+  </a>
+</p>
+<p>
+  <a href="https://www.freecodecamp.org/certification/rn_ny/back-end-development-and-apis-v9">
+    <img src="https://img.shields.io/badge/freeCodeCamp-Back%20End%20Development%20and%20APIs-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Back End Development and APIs Certification from freeCodeCamp" />
+  </a>
+  <a href="https://www.freecodecamp.org/certification/rn_ny/python-v9">
+    <img src="https://img.shields.io/badge/freeCodeCamp-Python-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Python Certification from freeCodeCamp" />
+  </a>
+</p>
+<p>
+  <a href="https://www.freecodecamp.org/certification/rn_ny/front-end-development-libraries-v9">
+    <img src="https://img.shields.io/badge/freeCodeCamp-Front%20End%20Libraries-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Front End Development Libraries Certification from freeCodeCamp" />
+  </a>
+  <a href="https://www.freecodecamp.org/certification/rn_ny/foundational-c-sharp-with-microsoft">
+    <img src="https://img.shields.io/badge/freeCodeCamp-Foundational%20C%23%20with%20Microsoft-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Foundational C# Certification with Microsoft from freeCodeCamp" />
+  </a>
+</p>
 
 ## Contact
 <div align="center">
