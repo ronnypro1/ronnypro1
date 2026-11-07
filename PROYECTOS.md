@@ -88,22 +88,23 @@ Comunidad con juegos, progreso y cumpleaños. [Documentación](https://darkangel
 Juego de rol con economía y rituales. [Documentación](https://darkangelbots.dev/mephisto/mephisto)
 
 ### Qué incluye
-- **Husbandos (colección de personajes):** un personaje aparece en los grupos y gana quien lo adivina primero. Tiene 6 rarezas, nivel de coleccionista, sobres, mercado entre usuarios con comisión, tienda cósmica de ediciones numeradas y una miniapp para gestionarlo todo
-- **Economía:** monedas y fichas, un banco de 7 niveles con impuestos, préstamos entre usuarios y plazos fijos, y anuncios recompensados con reclamo atómico
+- **Husbandos (colección de personajes):** un personaje aparece en los grupos y gana quien lo adivina primero. Tiene 7 rarezas (dos de ellas especiales, en ediciones numeradas), nivel de coleccionista, sobres por rareza y sobres mixtos, mercado entre usuarios con comisión, Tienda Exclusiva que se renueva cada 12 horas y una miniapp para gestionarlo todo. Con el nivel se desbloquea además el **Harem**, una miniapp aparte para exhibir a tus personajes favoritos
+- **Economía:** monedas y fichas, un banco de 7 niveles con impuestos, préstamos entre usuarios y plazos fijos, anuncios recompensados con reclamo atómico y antifarmeo por dispositivo, y tareas diarias que suman 1000 fichas por semana
 - **Más de 20 juegos multijugador:** bingo, UNO, blackjack, minas royale, cacería, barco, campamento, trivia BL, sopa de palabras, ajedrez y damas, entre otros. Tienen lobby, apuesta con pozo y varios usan miniapp
 - **Parejas y familia:** matrimonio y divorcio por frases en vez de comandos, adopción y certificados que acumulan monedas y se reparten cada mes, todo dentro de transacciones
 - **Chatbot con IA:** personaje con 18 rasgos de estado emocional por usuario y por chat, cuatro proveedores con rotación de claves, voz y comprensión de fotos, audios, stickers y videos
-- **Miniapps web:** Husbandos, Confesiones, Shadow Chat (chat anónimo uno a uno), Chibi (mascota virtual), Bingo, UNO, Sopa de palabras y Wall Rush
+- **Miniapps web:** Husbandos, Harem, Confesiones, Shadow Chat (chat anónimo uno a uno), Chibi (mascota virtual), Conóceme, Bingo, UNO, Sopa de palabras, Wall Rush, Tareas diarias y Foro (anuncios, comentarios e hilos privados anónimos, con reportes, baneos y panel de moderación)
 - **Perfil BL:** tarjeta animada dibujada con Pillow, en MP4 o GIF, con rangos Omegaverse y Guideverse
 - **Interacción:** más de 70 comandos agrupados en un arsenal, compatibilidad por signo, pareja del día, rankings por categoría y perfil con varias páginas
 - **Contenido editable desde Telegram:** manhwas, personajes y fotos viven en Mongo y se editan con `/data_bl`, con recarga en caliente y respaldo propio
-- **Operación:** textos por idioma, respaldos cada 30 minutos, heartbeat con evento de arranque y difusiones que se reanudan tras un reinicio
+- **Operación:** textos en cuatro idiomas (español, inglés, portugués y ruso), respaldos cada 30 minutos, heartbeat con evento de arranque y difusiones que se reanudan tras un reinicio
 
 ### Arquitectura
 - **Dos servidores en una misma red privada:** el bot corre en polling en uno, sin exponerse, y la API pública en otro. Cuando una miniapp necesita mandar un mensaje, la API se lo pide al bot por una ruta interna
-- **API unificada con FastAPI y uvicorn:** un solo proceso sirve todas las miniapps, con verificación HMAC del `initData` firmado de Telegram y un proxy de imágenes para que el token del bot nunca llegue al navegador
+- **API unificada con FastAPI y uvicorn:** un solo proceso sirve todas las miniapps, con verificación HMAC del `initData` firmado de Telegram y un proxy de imágenes para que el token del bot nunca llegue al navegador. Importa el mismo paquete que el bot, así los dos servidores comparten código
 - **MongoDB (Motor) compartido** por el bot y la API, con transacciones en los cambios que tocan a dos personas a la vez
 - **Datos del juego fuera del código:** la economía vive en un solo archivo recargable en caliente y, si Mongo falla al arrancar, el juego usa el último snapshot guardado en disco
+- **Imágenes en Cloudinary:** además del `file_id` de Telegram, los personajes guardan una URL pública para que las miniapps carguen las fotos sin pasar por el bot
 - **Coordinador central de partidas:** un solo juego por chat y un jugador en una sola partida, sin tocar cada plugin
 - **Partidas que sobreviven a un reinicio:** el estado de la mayoría de los juegos se guarda en Mongo y se retoma al arrancar
 
@@ -121,6 +122,11 @@ Juego de rol con economía y rituales. [Documentación](https://darkangelbots.de
 - **Reembolsos al salir del lobby:** cada juego cobra en un momento distinto, así que la devolución usa una marca de "pagado" que se baja al devolver y evita devolverla dos veces
 - **Apodos pagados con Stars que se perdían al reiniciar:** el pedido pendiente se guarda también en Mongo y el tipo de flujo viaja en el propio pago; si no se encuentra, el pago se deriva al staff en vez de perderse en silencio
 - **Miniapp en equipos de gama baja:** el Bingo detecta el nivel del dispositivo y la calidad de la red, usando la clasificación que Telegram manda en el User-Agent, y reacciona a un cambio de red en caliente
+- **Anuncios farmeables con varias cuentas:** el servidor limita el reclamo también por dispositivo, además del enfriamiento por usuario, para que una misma persona no cobre con varias cuentas. Las tareas diarias aplican el mismo criterio
+- **El proceso de la API se congelaba al avisar al bot:** una llamada HTTP síncrona bloqueaba todo el proceso hasta 5 segundos por cada jugador que abría su cartón; la pasé a aiohttp para que la espera de red no trabe el loop
+- **Picos de latencia en Mongo:** algunas consultas tardaban más de 2 s por conexiones frías; añadí un pool con conexiones listas
+- **Respaldo del chatbot que nunca servía:** un modelo alternativo devolvía error de permisos, así que cada vez que se agotaba el primero sumaba un error de más; lo quité y ahora pasa directo al siguiente proveedor
+- **Páginas pesadas por red móvil:** comprimí con gzip las respuestas de texto de las miniapps (UNO pasó de unos 100 KB a unos 20-25 KB en el cable) y sirvo las cartas como archivos fijos con caché de un año
 
 ---
 
