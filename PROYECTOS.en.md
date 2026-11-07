@@ -1,6 +1,6 @@
 # Technical details of my projects
 
-**🌐 Language:** [Español](PROYECTOS.md) · English
+**🌐 Language:** [Español](README.en.md) · English
 
 [← Back to profile](README.md)
 
