@@ -99,9 +99,7 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
     <img src="https://img.shields.io/badge/MongoDB-CRUD%20Operations-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="Insignia CRUD Operations in MongoDB" />
   </a>
   <a href="https://www.credly.com/badges/7ac4082c-173a-44bb-a0f2-c031af288f77/public_url">
-    <img src="https://img.shields.io/badge/MongoDB-Modelo%20Relacional%20a%20Documentos-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="Insignia From Relational Model (SQL) to MongoDB's Document Model" />
-  </a>
-</p>
+<img src="https://img.shields.io/badge/MongoDB-Relational%20to%20Document%20Model-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="Insignia From Relational Model (SQL) to MongoDB's Document Model" />
 <p>
   <a href="https://www.credly.com/badges/0222ca23-4923-4c25-ac6f-367ed5bdc5d3/public_url">
     <img src="https://img.shields.io/badge/MongoDB-Advanced%20Schema%20Design-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="Insignia MongoDB Advanced Schema Design Patterns and Anti-patterns" />
