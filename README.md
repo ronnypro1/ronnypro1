@@ -92,6 +92,11 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
     <img src="https://img.shields.io/badge/freeCodeCamp-Fundamentos%20de%20C%23%20con%20Microsoft-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de Fundamentos de C# con Microsoft en freeCodeCamp" />
   </a>
 </p>
+<p>
+  <a href="https://www.credly.com/badges/0c81b444-4779-4476-ac05-e5d35d39dc4b/public_url">
+    <img src="https://img.shields.io/badge/MongoDB-CRUD%20Operations-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="Insignia CRUD Operations in MongoDB" />
+  </a>
+</p>
 
 ## Contacto
 <div align="center">
