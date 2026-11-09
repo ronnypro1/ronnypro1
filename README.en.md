@@ -98,6 +98,24 @@ A network of Telegram bots covering moderation, music, games and social interact
   </a>
 </p>
 
+### MongoDB
+<p>
+  <a href="https://www.credly.com/badges/0c81b444-4779-4476-ac05-e5d35d39dc4b/public_url">
+    <img src="https://img.shields.io/badge/MongoDB-CRUD%20Operations-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="CRUD Operations in MongoDB badge" />
+  </a>
+  <a href="https://www.credly.com/badges/7ac4082c-173a-44bb-a0f2-c031af288f77/public_url">
+    <img src="https://img.shields.io/badge/MongoDB-Relational%20to%20Document%20Model-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="From Relational Model (SQL) to MongoDB's Document Model badge" />
+  </a>
+</p>
+<p>
+  <a href="https://www.credly.com/badges/0222ca23-4923-4c25-ac6f-367ed5bdc5d3/public_url">
+    <img src="https://img.shields.io/badge/MongoDB-Advanced%20Schema%20Design-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Advanced Schema Design Patterns and Anti-patterns badge" />
+  </a>
+  <a href="https://www.credly.com/badges/8713736b-f092-4dfb-9ee3-a6cc08f4ab51/public_url">
+    <img src="https://img.shields.io/badge/MongoDB-Aggregation%20Fundamentals-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Aggregation Fundamentals badge" />
+  </a>
+</p>
+
 ## Contact
 <div align="center">
 
