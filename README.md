@@ -92,9 +92,22 @@ Red de bots de Telegram con moderación, música, juegos e interacción social. 
     <img src="https://img.shields.io/badge/freeCodeCamp-Fundamentos%20de%20C%23%20con%20Microsoft-0a0a23?style=for-the-badge&logo=freecodecamp&logoColor=white" alt="Certificación de Fundamentos de C# con Microsoft en freeCodeCamp" />
   </a>
 </p>
+
+### MongoDB
 <p>
   <a href="https://www.credly.com/badges/0c81b444-4779-4476-ac05-e5d35d39dc4b/public_url">
     <img src="https://img.shields.io/badge/MongoDB-CRUD%20Operations-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="Insignia CRUD Operations in MongoDB" />
+  </a>
+  <a href="https://www.credly.com/badges/7ac4082c-173a-44bb-a0f2-c031af288f77/public_url">
+    <img src="https://img.shields.io/badge/MongoDB-Modelo%20Relacional%20a%20Documentos-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="Insignia From Relational Model (SQL) to MongoDB's Document Model" />
+  </a>
+</p>
+<p>
+  <a href="https://www.credly.com/badges/0222ca23-4923-4c25-ac6f-367ed5bdc5d3/public_url">
+    <img src="https://img.shields.io/badge/MongoDB-Advanced%20Schema%20Design-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="Insignia MongoDB Advanced Schema Design Patterns and Anti-patterns" />
+  </a>
+  <a href="https://www.credly.com/badges/8713736b-f092-4dfb-9ee3-a6cc08f4ab51/public_url">
+    <img src="https://img.shields.io/badge/MongoDB-Aggregation%20Fundamentals-00684A?style=for-the-badge&logo=mongodb&logoColor=white" alt="Insignia MongoDB Aggregation Fundamentals" />
   </a>
 </p>
 
